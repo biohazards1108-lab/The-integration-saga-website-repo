@@ -136,17 +136,27 @@ html, body {
   position: relative;
 }
 
+/* Dropdown menu background fix */
 .nav-dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: #020503;
-  border: 1px solid #00ff66;
-  list-style: none;
-  padding: 6px 0;
-  margin: 4px 0 0;
-  min-width: 160px;
-  display: none;
+  background-color: #001900; /* deep terminal green/black */
+  border: 1px solid #00ff66; /* neon green border */
+  padding: 0.5rem 0;
+}
+
+/* Dropdown menu items */
+.nav-dropdown-menu li a {
+  color: #00ff66; /* terminal green text */
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+/* Hover effect */
+.nav-dropdown-menu li a:hover {
+  background-color: #003300; /* darker green highlight */
+  color: #00ff99;
+}
+
 }
 
 .nav-dropdown-menu li a {
