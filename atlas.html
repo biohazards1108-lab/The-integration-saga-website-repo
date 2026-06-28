@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" class="eden-terminal">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>World Atlas | Project Eden Terminal</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="eden-body">
+
+  <!-- BOOT SCREEN -->
+  <div id="boot-screen" class="boot-screen">
+    <div class="boot-lines">
+      <p>> INITIALIZING PROJECT EDEN TERMINAL...</p>
+      <p>> ACCESSING WORLD ATLAS MODULE...</p>
+      <p>> RESTORING GEOSPATIAL FILES...</p>
+      <div class="boot-progress">
+        <div class="boot-progress-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CRT OVERLAY -->
+  <div class="crt-overlay"></div>
+
+  <!-- HEADER -->
+  <header class="eden-header">
+    <div class="eden-header-inner">
+      <div class="eden-logo">
+        <span class="eden-logo-title">PROJECT EDEN TERMINAL</span>
+        <span class="eden-logo-subtitle">Recovered Government Database</span>
+      </div>
+
+      <!-- NAVIGATION -->
+      <nav class="eden-nav">
+        <button class="nav-toggle">☰</button>
+
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+
+          <li class="nav-dropdown">
+            <button class="nav-dropdown-toggle">Books</button>
+            <ul class="nav-dropdown-menu">
+              <li><a href="books.html">Series Library</a></li>
+              <li><a href="timeline.html">Saga Timeline</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-dropdown">
+            <button class="nav-dropdown-toggle">World Atlas</button>
+            <ul class="nav-dropdown-menu">
+              <li><a href="atlas.html">Maps</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-dropdown">
+            <button class="nav-dropdown-toggle">Survivors</button>
+            <ul class="nav-dropdown-menu">
+              <li><a href="characters.html">Survivor Index</a></li>
+              <li><a href="kevin.html">Kevin Marsh</a></li>
+              <li><a href="lily.html">Lily</a></li>
+              <li><a href="rosa.html">Rosa</a></li>
+              <li><a href="emma.html">Emma</a></li>
+              <li><a href="ben.html">Ben</a></li>
+              <li><a href="darius.html">Darius</a></li>
+              <li><a href="elias.html">Elias</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-dropdown">
+            <button class="nav-dropdown-toggle">Infected</button>
+            <ul class="nav-dropdown-menu">
+              <li><a href="infected.html">Infected Index</a></li>
+              <li><a href="runner.html">Runner</a></li>
+              <li><a href="brute.html">Brute</a></li>
+              <li><a href="stalker.html">Stalker</a></li>
+              <li><a href="spitter.html">Spitter</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-dropdown">
+            <button class="nav-dropdown-toggle">Archive</button>
+            <ul class="nav-dropdown-menu">
+              <li><a href="archive.html">Recovered Files</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-dropdown">
+            <button class="nav-dropdown-toggle">Community</button>
+            <ul class="nav-dropdown-menu">
+              <li><a href="community.html">Community Hub</a></li>
+              <li><a href="news.html">Transmissions</a></li>
+            </ul>
+          </li>
+
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="coming-soon.html">Coming Soon</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="eden-hero">
+    <div class="eden-hero-inner">
+      <h1>WORLD ATLAS</h1>
+      <p>Geospatial Records for Project Eden & Site Zero</p>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main class="eden-main">
+
+    <!-- INTRO -->
+    <section class="panel">
+      <header class="panel-header">
+        <h2>ATLAS OVERVIEW</h2>
+        <span class="panel-tag">GEOSPATIAL MODULE</span>
+      </header>
+      <div class="panel-body">
+        <p>
+          This module contains official maps from Book 1 (Project Eden) and Book 2 (Site Zero).  
+          All maps are **spoiler‑safe** and designed to help readers visualize the world without revealing future plot details.
+        </p>
+      </div>
+    </section>
+
+    <!-- PROJECT EDEN MAP -->
+    <section class="panel panel-grid">
+      <header class="panel-header">
+        <h2>PROJECT EDEN MAP</h2>
+        <span class="panel-tag">BOOK 1</span>
+      </header>
+
+      <div class="panel-body panel-columns">
+        <div class="panel-column">
+          <p>
+            Early outbreak zones, evacuation routes, and initial Project Eden deployment sites.  
+            This map highlights the regions most impacted during the first wave of the Z‑Virus.
+          </p>
+        </div>
+
+        <div class="panel-column">
+          <img src="images/maps/book1-map.png" alt="Project Eden Map" data-lightbox="atlas">
+        </div>
+      </div>
+    </section>
+
+    <!-- SITE ZERO MAP -->
+    <section class="panel panel-grid">
+      <header class="panel-header">
+        <h2>SITE ZERO MAP</h2>
+        <span class="panel-tag">BOOK 2</span>
+      </header>
+
+      <div class="panel-body panel-columns">
+        <div class="panel-column">
+          <p>
+            The origin site of the outbreak.  
+            This map shows the surrounding region, research zones, and restricted areas without revealing narrative events.
+          </p>
+        </div>
+
+        <div class="panel-column">
+          <img src="images/maps/book2-map.png" alt="Site Zero Map" data-lightbox="atlas">
+        </div>
+      </div>
+    </section>
+
+    <!-- FUTURE MAPS -->
+    <section class="panel">
+      <header class="panel-header">
+        <h2>FUTURE MAPS</h2>
+        <span class="panel-tag">CLASSIFIED</span>
+      </header>
+      <div class="panel-body">
+        <p>
+          Maps for Book 3 (The Road West) and later volumes will unlock after release to avoid spoilers.  
+          Additional geospatial files remain redacted.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="eden-footer">
+    <p>PROJECT EDEN TERMINAL // The Z‑Virus Saga // All data classified and partially redacted.</p>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <div class="lightbox-inner">
+      <button class="lightbox-close">&times;</button>
+      <img src="" alt="" class="lightbox-image">
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
