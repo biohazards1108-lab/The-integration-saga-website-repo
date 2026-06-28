@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" class="eden-terminal">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Community Hub | Project Eden Terminal</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="eden-body">
+
+  <!-- BOOT SCREEN -->
+  <div id="boot-screen" class="boot-screen">
+    <div class="boot-lines">
+      <p>> INITIALIZING PROJECT EDEN TERMINAL...</p>
+      <p>> ACCESSING COMMUNITY HUB MODULE...</p>
+      <p>> RESTORING PUBLIC BULLETIN SYSTEM...</p>
+      <div class="boot-progress">
+        <div class="boot-progress-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CRT OVERLAY -->
+  <div class="crt-overlay"></div>
+
+  <!-- HEADER -->
+  <header class="eden-header">
+    <div class="eden-header-inner">
+      <div class="eden-logo">
+        <span class="eden-logo-title">PROJECT EDEN TERMINAL</span>
+        <span class="eden-logo-subtitle">Recovered Government Database</span>
+      </div>
+
+      <!-- NAVIGATION -->
+      <nav class="eden-nav">
+        <button class="nav-toggle">☰</button>
+
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+
+          <li class="nav-dropdown">
+            <button class="nav-dropdown-toggle">Books</button>
+            <ul class="nav-dropdown-menu">
+              <li><a href="books.html">Series Library</a></li>
+              <li><a href="timeline.html">Saga Timeline</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-dropdown">
+            <button class="nav-dropdown-toggle">World Atlas</button>
+            <ul class="nav-dropdown-menu">
+              <li><a href="atlas.html">Maps</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-dropdown">
+            <button class="nav-dropdown-toggle">Survivors</button>
+            <ul class="nav-dropdown-menu">
+              <li><a href="characters.html">Survivor Index</a></li>
+              <li><a href="kevin.html">Kevin Marsh</a></li>
+              <li><a href="lily.html">Lily</a></li>
+              <li><a href="rosa.html">Rosa</a></li>
+              <li><a href="emma.html">Emma</a></li>
+              <li><a href="ben.html">Ben</a></li>
+              <li><a href="darius.html">Darius</a></li>
+              <li><a href="elias.html">Elias</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-dropdown">
+            <button class="nav-dropdown-toggle">Infected</button>
+            <ul class="nav-dropdown-menu">
+              <li><a href="infected.html">Infected Index</a></li>
+              <li><a href="runner.html">Runner</a></li>
+              <li><a href="brute.html">Brute</a></li>
+              <li><a href="stalker.html">Stalker</a></li>
+              <li><a href="spitter.html">Spitter</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-dropdown">
+            <button class="nav-dropdown-toggle">Archive</button>
+            <ul class="nav-dropdown-menu">
+              <li><a href="archive.html">Recovered Files</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-dropdown">
+            <button class="nav-dropdown-toggle">Community</button>
+            <ul class="nav-dropdown-menu">
+              <li><a href="community.html">Community Hub</a></li>
+              <li><a href="news.html">Transmissions</a></li>
+            </ul>
+          </li>
+
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="coming-soon.html">Coming Soon</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="eden-hero">
+    <div class="eden-hero-inner">
+      <h1>COMMUNITY HUB</h1>
+      <p>Reader Discussions, Lore Discoveries, Reviews & Easter Eggs</p>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main class="eden-main">
+
+    <!-- INTRO -->
+    <section class="panel">
+      <header class="panel-header">
+        <h2>WELCOME TO THE COMMUNITY HUB</h2>
+        <span class="panel-tag">PUBLIC BULLETIN SYSTEM</span>
+      </header>
+      <div class="panel-body">
+        <p>
+          This is the central hub for readers of <strong>Project Eden</strong> and <strong>Site Zero</strong>.  
+          Discuss lore, share theories, submit reviews, reveal easter eggs, and connect with other survivors.
+        </p>
+      </div>
+    </section>
+
+    <!-- CHAT SYSTEM -->
+    <section class="panel">
+      <header class="panel-header">
+        <h2>LIVE TERMINAL CHAT</h2>
+        <span class="panel-tag">COMMUNITY CHANNEL</span>
+      </header>
+
+      <div class="panel-body">
+        <div id="chat-box" class="chat-box"></div>
+
+        <textarea id="chat-input" class="chat-input" placeholder="Type your message..."></textarea>
+        <button id="chat-send" class="btn-primary btn-small">Send Message</button>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="panel">
+      <header class="panel-header">
+        <h2>READER REVIEWS</h2>
+        <span class="panel-tag">BOOK FEEDBACK</span>
+      </header>
+
+      <div class="panel-body">
+        <textarea id="review-input" class="chat-input" placeholder="Write a review..."></textarea>
+        <button id="review-send" class="btn-secondary btn-small">Submit Review</button>
+
+        <div id="review-box" class="chat-box"></div>
+      </div>
+    </section>
+
+    <!-- LORE DISCOVERY -->
+    <section class="panel">
+      <header class="panel-header">
+        <h2>LORE DISCOVERIES</h2>
+        <span class="panel-tag">HIDDEN KNOWLEDGE</span>
+      </header>
+
+      <div class="panel-body">
+        <textarea id="lore-input" class="chat-input" placeholder="Share a lore discovery..."></textarea>
+        <button id="lore-send" class="btn-secondary btn-small">Submit Lore</button>
+
+        <div id="lore-box" class="chat-box"></div>
+      </div>
+    </section>
+
+    <!-- EASTER EGGS -->
+    <section class="panel">
+      <header class="panel-header">
+        <h2>EASTER EGGS</h2>
+        <span class="panel-tag">HIDDEN DETAILS</span>
+      </header>
+
+      <div class="panel-body">
+        <textarea id="egg-input" class="chat-input" placeholder="Found an easter egg? Share it..."></textarea>
+        <button id="egg-send" class="btn-secondary btn-small">Submit Easter Egg</button>
+
+        <div id="egg-box" class="chat-box"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="eden-footer">
+    <p>PROJECT EDEN TERMINAL // The Z‑Virus Saga // All data classified and partially redacted.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+  <!-- COMMUNITY JS -->
+  <script>
+    function loadBox(id) {
+      return JSON.parse(localStorage.getItem(id) || "[]");
+    }
+
+    function saveBox(id, data) {
+      localStorage.setItem(id, JSON.stringify(data));
+    }
+
+    function renderBox(id, elementId) {
+      const box = loadBox(id);
+      const el = document.getElementById(elementId);
+      el.innerHTML = box.map(msg => "<p>> " + msg + "</p>").join("");
+    }
+
+    function setupBox(inputId, buttonId, storageId, displayId) {
+      document.getElementById(buttonId).addEventListener("click", () => {
+        const input = document.getElementById(inputId);
+        const text = input.value.trim();
+        if (!text) return;
+        const box = loadBox(storageId);
+        box.push(text);
+        saveBox(storageId, box);
+        renderBox(storageId, displayId);
+        input.value = "";
+      });
+    }
+
+    setupBox("chat-input", "chat-send", "chatBox", "chat-box");
+    setupBox("review-input", "review-send", "reviewBox", "review-box");
+    setupBox("lore-input", "lore-send", "loreBox", "lore-box");
+    setupBox("egg-input", "egg-send", "eggBox", "egg-box");
+
+    renderBox("chatBox", "chat-box");
+    renderBox("reviewBox", "review-box");
+    renderBox("loreBox", "lore-box");
+    renderBox("eggBox", "egg-box");
+  </script>
+
+</body>
+</html>
