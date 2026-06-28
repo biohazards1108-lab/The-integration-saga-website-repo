@@ -150,18 +150,22 @@ html, body {
   min-width: 180px;
   z-index: 1000;
 }
-
-.nav-dropdown-menu li a {
-  color: #00ff66;
-  display: block;
-  padding: 8px 16px;
-  text-decoration: none;
+/* Fix white dropdown toggle buttons */
+.nav-dropdown-toggle {
+  background: #001900;          /* terminal green/black */
+  border: 1px solid #00ff66;    /* neon green border */
+  color: #00ff66;               /* terminal green text */
+  padding: 6px 12px;
+  font-family: "Courier New", monospace;
+  font-size: 0.85rem;
+  cursor: pointer;
 }
 
-.nav-dropdown-menu li a:hover {
-  background-color: #003300;
+.nav-dropdown-toggle:hover {
+  background: #003300;
   color: #00ff99;
 }
+
 
 .nav-dropdown.open .nav-dropdown-menu {
   display: block;
