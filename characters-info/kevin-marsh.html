@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>PROJECT EDEN TERMINAL – Kevin Marsh</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="../styles/main.css" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #0b1b2b 0, #02060a 55%, #000000 100%);
+      color: #e0f4ff;
+    }
+
+    .page-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      padding: 1.2rem 2rem;
+      border-bottom: 1px solid rgba(120, 255, 200, 0.25);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      backdrop-filter: blur(6px);
+      background: rgba(0, 10, 20, 0.7);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header .logo {
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      color: #78ffc8;
+    }
+
+    header nav a {
+      margin-left: 1rem;
+      text-decoration: none;
+      color: #e0f4ff;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    header nav a:hover {
+      color: #78ffc8;
+    }
+
+    main {
+      flex: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    @media (max-width: 900px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    #viewer-container {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(120, 255, 200, 0.35);
+      background: radial-gradient(circle at center, #07111c 0, #02060a 60%);
+    }
+
+    #viewer-canvas {
+      width: 100%;
+      height: 480px;
+      display: block;
+    }
+
+    .viewer-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 0.75rem 1rem;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+    }
+
+    .viewer-controls {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .viewer-button {
+      border: 1px solid rgba(120, 255, 200, 0.6);
+      background: rgba(0, 10, 20, 0.9);
+      color: #78ffc8;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      cursor: pointer;
+    }
+
+    .viewer-button:hover {
+      background: rgba(120, 255, 200, 0.15);
+    }
+
+    .character-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .character-header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    .character-header h2 {
+      margin: 0.3rem 0 0;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #78ffc8;
+    }
+
+    .character-tags {
+      margin-top: 0.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .tag {
+      border-radius: 999px;
+      border: 1px solid rgba(120, 255, 200, 0.5);
+      padding: 0.15rem 0.6rem;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #b9ffe6;
+    }
+
+    section.block {
+      border-radius: 12px;
+      border: 1px solid rgba(120, 255, 200, 0.25);
+      padding: 1rem 1.2rem;
+      background: radial-gradient(circle at top left, rgba(10, 40, 60, 0.6), rgba(2, 6, 10, 0.95));
+    }
+
+    section.block h3 {
+      margin-top: 0;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #78ffc8;
+    }
+
+    .clue-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0.5rem 0 0;
+      font-size: 0.8rem;
+    }
+
+    .clue-list li {
+      margin-bottom: 0.4rem;
+      position: relative;
+      padding-left: 1.1rem;
+      cursor: pointer;
+    }
+
+    .clue-list li[data-hidden="true"] {
+      color: rgba(214, 240, 255, 0.4);
+    }
+
+    .clue-list li[data-hidden="true"]::before {
+      content: "✶";
+      position: absolute;
+      left: 0;
+      color: rgba(120, 255, 200, 0.6);
+    }
+
+    .clue-list li[data-hidden="false"]::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #78ffc8;
+    }
+
+    footer {
+      padding: 1rem 2rem;
+      font-size: 0.75rem;
+      color: rgba(214, 240, 255, 0.6);
+      border-top: 1px solid rgba(120, 255, 200, 0.25);
+      background: rgba(0, 10, 20, 0.9);
+    }
+  </style>
+
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+  <script src="https://unpkg.com/three@0.160.0/examples/js/loaders/GLTFLoader.js"></script>
+</head>
+
+<body>
+<div class="page-wrapper">
+
+<header>
+  <div class="logo">PROJECT EDEN TERMINAL</div>
+  <nav>
+    <a href="../index.html">Terminal Hub</a>
+    <a href="../characters.html">Character Grid</a>
+    <a href="../archives.html">Lore Archives</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- 3D VIEWER -->
+  <div id="viewer-container">
+    <canvas id="viewer-canvas"></canvas>
+    <div class="viewer-overlay">
+      <span>KEVIN MARSH // SURVIVOR-0001</span>
+      <div class="viewer-controls">
+        <button class="viewer-button" id="btn-rotate">Auto-Rotate</button>
+        <button class="viewer-button" id="btn-reset">Reset View</button>
+        <button class="viewer-button" id="btn-highlight">Highlight Clue</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT COLUMN -->
+  <aside class="character-meta">
+
+    <div class="character-header">
+      <h1>KEVIN MARSH</h1>
+      <h2>Survivor ID: 0001 // Status: ACTIVE</h2>
+      <div class="character-tags">
+        <span class="tag">Leader</span>
+        <span class="tag">Veteran Survivor</span>
+        <span class="tag">Outbreak Witness</span>
+      </div>
+    </div>
+
+    <section class="block">
+      <h3>Profile Dossier</h3>
+      <p>
+        Kevin Marsh is the central survivor of the Integration Saga. Years after the fungal outbreak that
+        collapsed civilization, he has endured the wastelands, ruins, and infected territories while carrying
+        the grief of losing his daughter. 
+      </p>
+      <p>
+        His encounter with Lily — a girl holding secrets tied to the outbreak — sets him on a path toward
+        the rumored research facility known only as <strong>Eden</strong>. Their journey reveals that the infected
+        are not merely hunting… they are watching, remembering, and searching. 
+      </p>
+    </section>
+
+    <section class="block">
+      <h3>Embedded Lore</h3>
+      <p>
+        Kevin’s 3D model contains hidden metadata tied to events from <em>Project Eden</em> and <em>Site Zero</em>.
+        Rotate the model and use <strong>Highlight Clue</strong> to reveal hidden narrative fragments.
+      </p>
+
+      <ul class="clue-list" id="clue-list">
+        <li data-hidden="true" data-clue-id="km-daughter-locket">
+          Damaged locket fragment — last remaining artifact of his daughter.
+        </li>
+        <li data-hidden="true" data-clue-id="km-scar-leftarm">
+          Healed fungal burn scar — early outbreak encounter, predating Eden rumors.
+        </li>
+        <li data-hidden="false" data-clue-id="km-pack-markings">
+          Pack markings — symbols found near abandoned trails west of Site Zero. 
+        </li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h3>Terminal Notes</h3>
+      <p>
+        As readers progress through the books, new clues will unlock automatically. Some clues require
+        passwords found in the Archives, while others appear only after interacting with infected files.
+      </p>
+    </section>
+
+  </aside>
+
+</main>
+
+<footer>
+  <span>PROJECT EDEN TERMINAL // Survivor Node: Kevin Marsh</span><br />
+  <a href="kevin-marsh.html">Reload Node</a>
+  <a href="../index.html">Return to Terminal</a>
+</footer>
+
+</div>
+
+<script>
+  const canvas = document.getElementById("viewer-canvas");
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x02060a);
+
+  const camera = new THREE.PerspectiveCamera(
+    45,
+    canvas.clientWidth / canvas.clientHeight,
+    0.1,
+    100
+  );
+  camera.position.set(0, 1.4, 3.5);
+
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+  renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+  renderer.setPixelRatio(window.devicePixelRatio || 1);
+
+  const keyLight = new THREE.DirectionalLight(0x78ffc8, 1.2);
+  keyLight.position.set(2, 4, 3);
+  scene.add(keyLight);
+
+  const fillLight = new THREE.DirectionalLight(0x88aaff, 0.6);
+  fillLight.position.set(-3, 2, -2);
+  scene.add(fillLight);
+
+  const rimLight = new THREE.DirectionalLight(0xff8888, 0.4);
+  rimLight.position.set(0, 4, -4);
+  scene.add(rimLight);
+
+  const ambient = new THREE.AmbientLight(0x222233, 0.6);
+  scene.add(ambient);
+
+  let characterRoot = new THREE.Group();
+  scene.add(characterRoot);
+
+  const placeholderGeo = new THREE.CapsuleGeometry(0.4, 1.4, 8, 16);
+  const placeholderMat = new THREE.MeshStandardMaterial({
+    color: 0x1b9c7c,
+    emissive: 0x0b3b2c,
+    metalness: 0.3,
+    roughness: 0.4
+  });
+  const placeholderMesh = new THREE.Mesh(placeholderGeo, placeholderMat);
+  placeholderMesh.position.y = 1;
+  characterRoot.add(placeholderMesh);
+
+  const loader = new THREE.GLTFLoader();
+  loader.load(
+    "../models/kevin.glb",
+    (gltf) => {
+      scene.remove(characterRoot);
+      characterRoot = gltf.scene;
+      scene.add(characterRoot);
+      characterRoot.position.set(0, 0, 0);
+    },
+    undefined,
+    (error) => {
+      console.warn("Failed to load Kevin model, using placeholder.", error);
+    }
+  );
+
+  let isDragging = false;
+  let previousX = 0;
+  let autoRotate = false;
+
+  canvas.addEventListener("mousedown", (e) => {
+    isDragging = true;
+    previousX = e.clientX;
+  });
+
+  window.addEventListener("mouseup", () => {
+    isDragging = false;
+  });
+
+  window.addEventListener("mousemove", (e) => {
+    if (!isDragging) return;
+    const deltaX = e.clientX - previousX;
+    previousX = e.clientX;
+    characterRoot.rotation.y += deltaX * 0.005;
+  });
+
+  function onResize() {
+    const width = canvas.clientWidth;
+    const height = 480;
+    renderer.setSize(width, height);
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+  }
+  window.addEventListener("resize", onResize);
+  onResize();
+
+  const btnHighlight = document.getElementById("btn-highlight");
+  const clueList = document.getElementById("clue-list");
+
+  let highlightActive = false;
+  btnHighlight.addEventListener("click", () => {
+    highlightActive = !highlightActive;
+    btnHighlight.textContent = highlightActive ? "Stop Highlight" : "Highlight Clue";
+
+    const hiddenClues = Array.from(
+      clueList.querySelectorAll("li[data-hidden='true']")
+    );
+    if (highlightActive && hiddenClues.length > 0) {
+      const target = hiddenClues[0];
+      target.dataset.hidden = "false";
+    }
+  });
+
+  const btnRotate = document.getElementById("btn-rotate");
+  btnRotate.addEventListener("click", () => {
+    autoRotate = !autoRotate;
+    btnRotate.textContent = autoRotate ? "Stop Rotate" : "Auto-Rotate";
+  });
+
+  const btnReset = document.getElementById("btn-reset");
+  btnReset.addEventListener("click", () => {
+    characterRoot.rotation.set(0, 0, 0);
+    camera.position.set(0, 1.4, 3.5);
+  });
+
+  function animate() {
+    requestAnimationFrame(animate);
+
+    if (autoRotate) {
+      characterRoot.rotation.y += 0.003;
+    }
+
+    characterRoot.position.y = Math.sin(Date.now() * 0.001) * 0.03;
+
+    renderer.render(scene, camera);
+  }
+  animate();
+</script>
+
+</body>
+</html>
