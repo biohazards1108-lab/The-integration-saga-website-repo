@@ -4,7 +4,170 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>PROJECT EDEN TERMINAL – Integration Saga Database</title>
+
+  <!-- Terminal Stylesheet -->
   <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* Restore Terminal Glow + Layout */
+    body.eden-body {
+      background: #000;
+      color: #78ffc8;
+      font-family: "Courier New", monospace;
+      text-shadow: 0 0 4px rgba(120,255,200,0.6);
+    }
+
+    .eden-header {
+      padding: 1.5rem;
+      border-bottom: 1px solid rgba(120,255,200,0.3);
+      background: rgba(0,10,20,0.7);
+      backdrop-filter: blur(4px);
+    }
+
+    .eden-logo-title {
+      font-size: 1.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .eden-logo-subtitle {
+      font-size: 0.8rem;
+      opacity: 0.7;
+      letter-spacing: 0.1em;
+    }
+
+    .eden-nav {
+      margin-top: 1rem;
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .eden-nav a,
+    .dropbtn {
+      color: #e0f4ff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0.4rem 0.6rem;
+    }
+
+    .eden-nav a:hover,
+    .dropbtn:hover {
+      color: #78ffc8;
+    }
+
+    /* Dropdown */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background: rgba(0,10,20,0.95);
+      border: 1px solid rgba(120,255,200,0.25);
+      min-width: 180px;
+      z-index: 999;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 0.6rem 1rem;
+      color: #e0f4ff;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      background: rgba(120,255,200,0.15);
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Main Page */
+    .eden-main {
+      padding: 3rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .eden-title {
+      font-size: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-bottom: 0.5rem;
+    }
+
+    .eden-subtitle {
+      font-size: 1rem;
+      opacity: 0.8;
+      margin-bottom: 2rem;
+    }
+
+    .eden-section {
+      margin-top: 2rem;
+      border-left: 2px solid rgba(120,255,200,0.3);
+      padding-left: 1rem;
+    }
+
+    /* Boot Screen */
+    .boot-screen {
+      position: fixed;
+      inset: 0;
+      background: #000;
+      color: #78ffc8;
+      font-family: "Courier New", monospace;
+      padding: 2rem;
+      z-index: 9999;
+      transition: opacity 0.6s ease;
+    }
+
+    .boot-lines p {
+      margin: 0.4rem 0;
+    }
+
+    .boot-progress {
+      margin-top: 1rem;
+      width: 100%;
+      height: 8px;
+      background: rgba(120,255,200,0.2);
+      overflow: hidden;
+      border-radius: 4px;
+    }
+
+    .boot-progress-bar {
+      width: 0%;
+      height: 100%;
+      background: #78ffc8;
+      animation: bootload 2.5s forwards;
+    }
+
+    @keyframes bootload {
+      from { width: 0%; }
+      to { width: 100%; }
+    }
+
+    /* CRT Overlay */
+    .crt-overlay {
+      pointer-events: none;
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        rgba(255,255,255,0.03) 0px,
+        rgba(255,255,255,0.03) 1px,
+        transparent 2px
+      );
+      mix-blend-mode: overlay;
+      z-index: 999;
+    }
+  </style>
 </head>
 
 <body class="eden-body">
@@ -29,11 +192,11 @@
   <div class="eden-header-inner">
 
     <div class="eden-logo">
-      <span class="eden-logo-title">PROJECT EDEN TERMINAL</span>
+      <span class="eden-logo-title">PROJECT EDEN TERMINAL</span><br>
       <span class="eden-logo-subtitle">Recovered Government Database</span>
     </div>
 
-    <!-- FIXED NAV BAR -->
+    <!-- RESTORED TERMINAL NAV BAR -->
     <nav class="eden-nav">
 
       <!-- Survivors (direct link) -->
