@@ -69,15 +69,6 @@
     }
   </style>
 </head>
-<script>
-  window.addEventListener("load", () => {
-    const boot = document.getElementById("boot-screen");
-    if (boot) {
-      boot.style.opacity = "0";
-      setTimeout(() => boot.style.display = "none", 600);
-    }
-  });
-</script>
 
 <body class="eden-body">
 
@@ -170,7 +161,7 @@
         <a class="view-btn" href="characters-info/emma.html">View Profile</a>
       </div>
 
-      <!-- ELIAS (placeholder until we build his page) -->
+      <!-- ELIAS -->
       <div class="character-card">
         <img src="images/elias.png" alt="Elias">
         <h3>Elias</h3>
@@ -180,6 +171,17 @@
 
     </div>
   </main>
+
+  <!-- BOOT SCREEN FADE SCRIPT -->
+  <script>
+    window.addEventListener("load", () => {
+      const boot = document.getElementById("boot-screen");
+      if (boot) {
+        boot.style.opacity = "0";
+        setTimeout(() => boot.style.display = "none", 600);
+      }
+    });
+  </script>
 
 </body>
 </html>
