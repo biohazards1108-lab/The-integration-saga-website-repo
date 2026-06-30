@@ -5,18 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>PROJECT EDEN TERMINAL – Integration Saga Database</title>
 
-  <!-- Terminal Stylesheet -->
   <link rel="stylesheet" href="css/style.css" />
 
   <style>
-    /* Restore Terminal Glow + Layout */
+    /* TERMINAL BODY */
     body.eden-body {
       background: #000;
       color: #78ffc8;
       font-family: "Courier New", monospace;
       text-shadow: 0 0 4px rgba(120,255,200,0.6);
+      margin: 0;
+      padding: 0;
     }
 
+    /* HEADER */
     .eden-header {
       padding: 1.5rem;
       border-bottom: 1px solid rgba(120,255,200,0.3);
@@ -25,8 +27,8 @@
     }
 
     .eden-logo-title {
-      font-size: 1.6rem;
-      letter-spacing: 0.15em;
+      font-size: 1.8rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
     }
 
@@ -36,6 +38,7 @@
       letter-spacing: 0.1em;
     }
 
+    /* NAV BAR */
     .eden-nav {
       margin-top: 1rem;
       display: flex;
@@ -61,7 +64,7 @@
       color: #78ffc8;
     }
 
-    /* Dropdown */
+    /* DROPDOWN */
     .dropdown {
       position: relative;
       display: inline-block;
@@ -91,33 +94,73 @@
       display: block;
     }
 
-    /* Main Page */
+    /* MAIN CONTENT */
     .eden-main {
       padding: 3rem;
-      max-width: 900px;
+      max-width: 1100px;
       margin: auto;
     }
 
     .eden-title {
-      font-size: 2rem;
+      font-size: 2.4rem;
       text-transform: uppercase;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.25em;
       margin-bottom: 0.5rem;
     }
 
     .eden-subtitle {
-      font-size: 1rem;
+      font-size: 1.1rem;
       opacity: 0.8;
       margin-bottom: 2rem;
     }
 
     .eden-section {
-      margin-top: 2rem;
+      margin-top: 2.5rem;
       border-left: 2px solid rgba(120,255,200,0.3);
-      padding-left: 1rem;
+      padding-left: 1.2rem;
     }
 
-    /* Boot Screen */
+    .eden-section h2 {
+      font-size: 1.4rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .eden-section p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+
+    /* TERMINAL PANEL */
+    .terminal-panel {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      border: 1px solid rgba(120,255,200,0.3);
+      background: rgba(0,10,20,0.6);
+      border-radius: 8px;
+    }
+
+    .terminal-panel h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 1rem;
+    }
+
+    .terminal-panel ul {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+
+    .terminal-panel li {
+      margin-bottom: 0.6rem;
+      font-size: 0.9rem;
+    }
+
+    /* BOOT SCREEN */
     .boot-screen {
       position: fixed;
       inset: 0;
@@ -154,7 +197,7 @@
       to { width: 100%; }
     }
 
-    /* CRT Overlay */
+    /* CRT OVERLAY */
     .crt-overlay {
       pointer-events: none;
       position: fixed;
@@ -196,13 +239,11 @@
       <span class="eden-logo-subtitle">Recovered Government Database</span>
     </div>
 
-    <!-- RESTORED TERMINAL NAV BAR -->
+    <!-- NAV BAR -->
     <nav class="eden-nav">
 
-      <!-- Survivors (direct link) -->
       <a href="characters.html" class="nav-link">Survivor Index</a>
 
-      <!-- Infected -->
       <div class="dropdown">
         <button class="dropbtn">Infected</button>
         <div class="dropdown-content">
@@ -210,7 +251,6 @@
         </div>
       </div>
 
-      <!-- Factions -->
       <div class="dropdown">
         <button class="dropbtn">Factions</button>
         <div class="dropdown-content">
@@ -218,13 +258,8 @@
         </div>
       </div>
 
-      <!-- Maps -->
       <a href="maps.html" class="nav-link">Maps</a>
-
-      <!-- Archives -->
       <a href="archives.html" class="nav-link">Lore Archives</a>
-
-      <!-- Home -->
       <a href="index.html" class="nav-link">Terminal Hub</a>
 
     </nav>
@@ -237,16 +272,75 @@
   <h1 class="eden-title">PROJECT EDEN TERMINAL</h1>
   <p class="eden-subtitle">Recovered files from the Integration Saga universe</p>
 
+  <!-- INTRO -->
   <section class="eden-section">
     <h2>Welcome, Operator</h2>
     <p>
-      This terminal contains reconstructed data from the Integration Saga universe, including survivor
-      dossiers, infected classifications, faction records, and geographical maps of known safe zones.
+      You are accessing a reconstructed government terminal containing classified data from the Integration Saga universe.
+      This system aggregates survivor dossiers, infected classifications, faction intelligence, and geographical mapping
+      of known safe zones and infected territories.
     </p>
     <p>
-      Use the navigation bar above to explore the database.
+      All modules are active. Navigation is available above. Proceed with caution — several files remain corrupted or partially restored.
     </p>
   </section>
+
+  <!-- SYSTEM STATUS -->
+  <div class="terminal-panel">
+    <h3>System Status</h3>
+    <ul>
+      <li>✔ Survivor Database — Online</li>
+      <li>✔ Infected Database — Online</li>
+      <li>✔ Faction Records — Online</li>
+      <li>✔ Map Archive — Online</li>
+      <li>✔ Lore Archives — Online</li>
+      <li>⚠ Some files remain partially corrupted</li>
+    </ul>
+  </div>
+
+  <!-- RECENT UPDATES -->
+  <div class="terminal-panel">
+    <h3>Recent Database Updates</h3>
+    <ul>
+      <li>• Survivor Node: Elias — Added</li>
+      <li>• Survivor Node: Emma — Updated (Status: Deceased)</li>
+      <li>• Faction File: White Coats — Corrected (Virus origin updated)</li>
+      <li>• Survivor Grid — Rebuilt</li>
+      <li>• Terminal Navigation — Repaired</li>
+    </ul>
+  </div>
+
+  <!-- WORLD STATE -->
+  <div class="terminal-panel">
+    <h3>World State Overview</h3>
+    <ul>
+      <li>• Infection spread remains active in multiple zones</li>
+      <li>• Safehouse Network operational</li>
+      <li>• Fungal mutation confirmed as radiation‑induced</li>
+      <li>• Survivor movement detected across northern districts</li>
+    </ul>
+  </div>
+
+  <!-- MODULES -->
+  <div class="terminal-panel">
+    <h3>Database Modules</h3>
+    <ul>
+      <li>• Survivor Index — Personnel files</li>
+      <li>• Infected Types — Biological classifications</li>
+      <li>• Faction Index — Organizational intelligence</li>
+      <li>• Maps — Geographical overlays</li>
+      <li>• Lore Archives — Historical records</li>
+    </ul>
+  </div>
+
+  <!-- OPERATOR NOTES -->
+  <div class="terminal-panel">
+    <h3>Operator Notes</h3>
+    <p>
+      Additional files will unlock as the terminal continues to reconstruct corrupted data.  
+      Some nodes require cross‑referencing survivor logs or faction intel to reveal deeper connections.
+    </p>
+  </div>
 
 </main>
 
