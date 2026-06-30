@@ -160,6 +160,18 @@
       font-size: 0.9rem;
     }
 
+    /* BOOK LINKS */
+    .book-link {
+      color: #78ffc8;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .book-link:hover {
+      color: #b9ffe6;
+      text-decoration: underline;
+    }
+
     /* BOOT SCREEN */
     .boot-screen {
       position: fixed;
@@ -218,9 +230,10 @@
 <!-- BOOT SCREEN -->
 <div id="boot-screen" class="boot-screen">
   <div class="boot-lines">
-    <p>> INITIALIZING PROJECT EDEN TERMINAL...</p>
-    <p>> LOADING SYSTEM MODULES...</p>
-    <p>> RESTORING DATABASE CONNECTION...</p>
+    <p>> SYSTEM BOOT SEQUENCE INITIATED...</p>
+    <p>> RESTORING DAMAGED TERMINAL FILES...</p>
+    <p>> REBUILDING CORRUPTED DATABASE MODULES...</p>
+    <p>> PLEASE STAND BY...</p>
     <div class="boot-progress">
       <div class="boot-progress-bar"></div>
     </div>
@@ -274,39 +287,29 @@
 
   <!-- INTRO -->
   <section class="eden-section">
-    <h2>Welcome, Operator</h2>
+    <h2>Terminal Status: Restored</h2>
     <p>
-      You are accessing a reconstructed government terminal containing classified data from the Integration Saga universe.
-      This system aggregates survivor dossiers, infected classifications, faction intelligence, and geographical mapping
-      of known safe zones and infected territories.
+      This government terminal was discovered in a damaged state, its internal systems corrupted by time,
+      radiation, and fungal interference. Restoration protocols have been successfully executed, and most
+      modules are now operational.
     </p>
     <p>
-      All modules are active. Navigation is available above. Proceed with caution — several files remain corrupted or partially restored.
+      Some data remains fragmented. Some files are incomplete. But the core database is stable enough for
+      civilian access.
     </p>
   </section>
 
   <!-- SYSTEM STATUS -->
   <div class="terminal-panel">
-    <h3>System Status</h3>
+    <h3>System Diagnostics</h3>
     <ul>
-      <li>✔ Survivor Database — Online</li>
-      <li>✔ Infected Database — Online</li>
-      <li>✔ Faction Records — Online</li>
-      <li>✔ Map Archive — Online</li>
-      <li>✔ Lore Archives — Online</li>
-      <li>⚠ Some files remain partially corrupted</li>
-    </ul>
-  </div>
-
-  <!-- RECENT UPDATES -->
-  <div class="terminal-panel">
-    <h3>Recent Database Updates</h3>
-    <ul>
-      <li>• Survivor Node: Elias — Added</li>
-      <li>• Survivor Node: Emma — Updated (Status: Deceased)</li>
-      <li>• Faction File: White Coats — Corrected (Virus origin updated)</li>
-      <li>• Survivor Grid — Rebuilt</li>
-      <li>• Terminal Navigation — Repaired</li>
+      <li>✔ Core Database — Online</li>
+      <li>✔ Survivor Index — Operational</li>
+      <li>✔ Infected Records — Stable</li>
+      <li>✔ Faction Intelligence — Verified</li>
+      <li>✔ Map Archive — Synced</li>
+      <li>⚠ Legacy Files — Partial corruption detected</li>
+      <li>⚠ Audio Logs — Reconstruction in progress</li>
     </ul>
   </div>
 
@@ -314,31 +317,37 @@
   <div class="terminal-panel">
     <h3>World State Overview</h3>
     <ul>
-      <li>• Infection spread remains active in multiple zones</li>
-      <li>• Safehouse Network operational</li>
-      <li>• Fungal mutation confirmed as radiation‑induced</li>
-      <li>• Survivor movement detected across northern districts</li>
+      <li>• Fungal outbreak confirmed as radiation‑induced mutation</li>
+      <li>• Safehouse Network remains active</li>
+      <li>• Northern districts show increased infected movement</li>
+      <li>• Survivor groups continue to migrate west</li>
     </ul>
   </div>
 
-  <!-- MODULES -->
+  <!-- BOOK INFO -->
   <div class="terminal-panel">
-    <h3>Database Modules</h3>
+    <h3>Integration Saga Books</h3>
+    <p>
+      Explore the full story behind the terminal. Purchase the official Integration Saga novels:
+    </p>
+
     <ul>
-      <li>• Survivor Index — Personnel files</li>
-      <li>• Infected Types — Biological classifications</li>
-      <li>• Faction Index — Organizational intelligence</li>
-      <li>• Maps — Geographical overlays</li>
-      <li>• Lore Archives — Historical records</li>
+      <li>• <a class="book-link" href="https://amazon.com/s?k=Project+Eden+Book+1" target="_blank">Project Eden — Book 1</a></li>
+      <li>• <a class="book-link" href="https://amazon.com/s?k=Site+Zero+Book+2" target="_blank">Site Zero — Book 2</a></li>
+      <li>• <a class="book-link" href="https://amazon.com/s?k=The+Road+West+Book+3" target="_blank">The Road West — Book 3</a></li>
     </ul>
+
+    <p>
+      If you want the exact Amazon links added, paste them and Freddy will update this section.
+    </p>
   </div>
 
   <!-- OPERATOR NOTES -->
   <div class="terminal-panel">
     <h3>Operator Notes</h3>
     <p>
-      Additional files will unlock as the terminal continues to reconstruct corrupted data.  
-      Some nodes require cross‑referencing survivor logs or faction intel to reveal deeper connections.
+      This terminal is a living archive. As more corrupted files are reconstructed, additional modules will
+      unlock. Some data may require cross‑referencing survivor logs or faction intelligence.
     </p>
   </div>
 
@@ -350,7 +359,7 @@
     const boot = document.getElementById("boot-screen");
     if (boot) {
       boot.style.opacity = "0";
-      setTimeout(() => boot.style.display = "none", 600);
+      setTimeout(() => boot.style.display = "none", 700);
     }
   });
 </script>
