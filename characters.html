@@ -69,6 +69,15 @@
     }
   </style>
 </head>
+<script>
+  window.addEventListener("load", () => {
+    const boot = document.getElementById("boot-screen");
+    if (boot) {
+      boot.style.opacity = "0";
+      setTimeout(() => boot.style.display = "none", 600);
+    }
+  });
+</script>
 
 <body class="eden-body">
 
