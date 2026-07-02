@@ -61,7 +61,7 @@
   </div>
 </header>
 
-<main class="eden-main">
+
 
 
   <!-- HERO -->
@@ -161,5 +161,22 @@
   </div>
 
   <script src="js/main.js"></script>
+</body>
+</html>
+</main>
+
+<!-- BOOT SCREEN FADE SCRIPT -->
+<script>
+  window.addEventListener("load", () => {
+    const boot = document.getElementById("boot-screen");
+    if (boot) {
+      setTimeout(() => {
+        boot.style.opacity = "0";
+        setTimeout(() => boot.style.display = "none", 600);
+      }, 4000); // 4 second boot time
+    }
+  });
+</script>
+
 </body>
 </html>
