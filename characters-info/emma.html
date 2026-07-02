@@ -2,282 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>PROJECT EDEN TERMINAL – Emma Marsh</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <link rel="stylesheet" href="../styles/main.css" />
-
-  <style>
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #0b1b2b 0, #02060a 55%, #000000 100%);
-      color: #e0f4ff;
-    }
-
-    .page-wrapper {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    header {
-      padding: 1.2rem 2rem;
-      border-bottom: 1px solid rgba(120, 255, 200, 0.25);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      backdrop-filter: blur(6px);
-      background: rgba(0, 10, 20, 0.7);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    header .logo {
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      color: #78ffc8;
-    }
-
-    header nav a {
-      margin-left: 1rem;
-      text-decoration: none;
-      color: #e0f4ff;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    header nav a:hover {
-      color: #78ffc8;
-    }
-
-    main {
-      flex: 1;
-      display: grid;
-      grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
-      gap: 2rem;
-      padding: 2rem;
-    }
-
-    @media (max-width: 900px) {
-      main {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .portrait-frame {
-      position: relative;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid rgba(120, 255, 200, 0.6);
-      background: radial-gradient(circle at center, #031018 0, #000000 70%);
-      box-shadow: 0 0 24px rgba(120, 255, 200, 0.35);
-    }
-
-    .portrait-inner {
-      position: relative;
-      padding: 1rem;
-    }
-
-    .portrait-inner img {
-      display: block;
-      width: 100%;
-      border-radius: 8px;
-      object-fit: cover;
-      filter: grayscale(40%);
-    }
-
-    .scanlines {
-      pointer-events: none;
-      position: absolute;
-      inset: 0;
-      background-image: linear-gradient(
-        rgba(0, 0, 0, 0.35) 1px,
-        rgba(0, 0, 0, 0) 2px
-      );
-      background-size: 100% 2px;
-      mix-blend-mode: soft-light;
-      opacity: 0.6;
-      animation: scanline-move 6s linear infinite;
-    }
-
-    @keyframes scanline-move {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(2px); }
-    }
-
-    .crt-flicker {
-      pointer-events: none;
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top, rgba(120, 255, 200, 0.12), transparent 55%);
-      mix-blend-mode: screen;
-      animation: crt-flicker 3.5s ease-in-out infinite;
-    }
-
-    @keyframes crt-flicker {
-      0%, 100% { opacity: 0.4; }
-      20% { opacity: 0.6; }
-      40% { opacity: 0.3; }
-      60% { opacity: 0.7; }
-      80% { opacity: 0.5; }
-    }
-
-    .portrait-label {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 0.5rem 0.9rem;
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.8rem;
-    }
-
-    .portrait-label span {
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #78ffc8;
-    }
-
-    .portrait-label .id {
-      font-size: 0.7rem;
-      opacity: 0.8;
-    }
-
-    .character-meta {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .character-header h1 {
-      margin: 0;
-      font-size: 1.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-    }
-
-    .character-header h2 {
-      margin: 0.3rem 0 0;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: #78ffc8;
-    }
-
-    section.block {
-      border-radius: 12px;
-      border: 1px solid rgba(120, 255, 200, 0.25);
-      padding: 1rem 1.2rem;
-      background: radial-gradient(circle at top left, rgba(10, 40, 60, 0.6), rgba(2, 6, 10, 0.95));
-    }
-
-    section.block h3 {
-      margin-top: 0;
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: #78ffc8;
-    }
-
-    section.block p {
-      font-size: 0.85rem;
-      line-height: 1.5;
-      color: #d6f0ff;
-    }
-
-    footer {
-      padding: 1rem 2rem;
-      font-size: 0.75rem;
-      color: rgba(214, 240, 255, 0.6);
-      border-top: 1px solid rgba(120, 255, 200, 0.25);
-      background: rgba(0, 10, 20, 0.9);
-    }
-
-    footer a {
-      color: #78ffc8;
-      text-decoration: none;
-      margin-right: 1rem;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Emma Marsh — Project Eden Terminal</title>
+  <link rel="stylesheet" href="../css/style.css" />
 </head>
-<body>
-<div class="page-wrapper">
+<body class="eden-body">
 
-  <header>
-    <div class="logo">PROJECT EDEN TERMINAL</div>
-    <nav>
+<div id="boot-screen" class="boot-screen">
+  <div class="boot-lines">
+    <p>> LOADING SURVIVOR NODE...</p>
+    <div class="boot-progress"><div class="boot-progress-bar"></div></div>
+  </div>
+</div>
+
+<div class="crt-overlay"></div>
+<header class="eden-header">
+  <div class="eden-header-inner">
+    <div class="eden-logo">
+      <span class="eden-logo-title">PROJECT EDEN TERMINAL</span>
+      <span class="eden-logo-subtitle">Recovered Government Database</span>
+    </div>
+    <nav class="eden-nav">
       <a href="../index.html">Terminal Hub</a>
       <a href="../characters.html">Character Grid</a>
-      <a href="../archives.html">Lore Archives</a>
+      <a href="../lore.html">Lore Archives</a>
     </nav>
-  </header>
+  </div>
+</header>
 
-  <main>
-    <div class="portrait-frame">
-      <div class="portrait-inner">
-        <img src="../images/emma.png" alt="Emma Marsh – Survivor Portrait" />
-        <div class="scanlines"></div>
-        <div class="crt-flicker"></div>
-        <div class="portrait-label">
-          <span>EMMA MARSH // STATUS: DECEASED</span>
-          <span class="id">FILE: EM-0006 / CLASSIFIED</span>
-        </div>
-      </div>
-    </div>
+<main class="eden-main">
+  <h1 class="eden-title">EMMA MARSH</h1>
+  <p class="eden-subtitle">Survivor node — restricted access</p>
 
-    <aside class="character-meta">
-      <div class="character-header">
-        <h1>EMMA MARSH</h1>
-        <h2>Age at Death: 12 // Kevin’s Daughter</h2>
-      </div>
+  <section class="terminal-panel">
+    <h3>Profile</h3>
+    <p>Emma Marsh appears briefly in Books 1 and 2. She is remembered as Kevin’s daughter — quiet, gentle, and deeply loved. Her loss shapes Kevin’s journey and emotional state throughout the Integration Saga.</p>
+  </section>
 
-      <section class="block">
-        <h3>Profile dossier</h3>
-        <p>
-          Emma Marsh appears briefly in Books 1 and 2. She is remembered as Kevin’s daughter — quiet, gentle,
-          and deeply loved. Her loss shapes Kevin’s journey and emotional state throughout the Integration Saga.
-        </p>
-      </section>
+  <section class="terminal-panel">
+    <h3>Fungal transformation</h3>
+    <p>Emma’s death is tied to the mutated fungus responsible for the outbreak. She becomes the spore core — not by design, not by experiment, but by tragic biological circumstance.</p>
+  </section>
 
-      <section class="block">
-        <h3>Fungal transformation</h3>
-        <p>
-          Emma’s death is tied to the mutated fungus responsible for the outbreak.  
-          She becomes the **spore core** — not by design, not by experiment, but by tragic biological
-          circumstance.  
-          The fungus mutated after exposure to extreme radiation, creating a new infection vector that
-          ultimately consumed her.
-        </p>
-      </section>
+</main>
 
-      <section class="block">
-        <h3>Terminal notes</h3>
-        <p>
-          Emma’s node contains minimal metadata out of respect for her limited appearances and her role in
-          Kevin’s emotional arc.  
-          Additional details unlock only when accessing Kevin’s node or Eden fungal research logs.
-        </p>
-      </section>
-    </aside>
-  </main>
+<footer class="eden-footer">
+  <p>PROJECT EDEN TERMINAL // Survivor Node: Emma Marsh</p>
+  <p><a href="emma.html">Reload Node</a> — <a href="../index.html">Return to Terminal</a></p>
+</footer>
 
-  <footer>
-    <span>PROJECT EDEN TERMINAL // Survivor Node: Emma Marsh</span><br />
-    <a href="emma.html">Reload Node</a>
-    <a href="../index.html">Return to Terminal</a>
-  </footer>
-
-</div>
 </body>
 </html>
