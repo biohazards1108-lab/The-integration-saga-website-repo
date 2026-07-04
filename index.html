@@ -86,18 +86,20 @@
         </footer>
 
     </div>
+<script>
+    window.addEventListener('load', () => {
+        const boot = document.getElementById('boot-screen');
+        const main = document.getElementById('main-content');
 
-    <!-- SCRIPT -->
-    <script>
-        window.addEventListener('load', () => {
-            const boot = document.getElementById('boot-screen');
-            const main = document.getElementById('main-content');
-            setTimeout(() => {
-                boot.classList.add('hidden');
-                main.classList.remove('hidden');
-            }, 2500);
-        });
-    </script>
+        // Show boot for 2.5 seconds, then reveal main content
+        setTimeout(() => {
+            boot.classList.add('hidden');
+            main.classList.remove('hidden');
+        }, 2500);
+    });
+</script>
+
+   
 
 </body>
 </html>
