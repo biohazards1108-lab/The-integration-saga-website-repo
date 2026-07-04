@@ -19,16 +19,114 @@
                 <span class="eden-logo-subtitle">Faction Intelligence Module</span>
             </div>
 
-            <nav class="eden-nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="lore.html">Lore Database</a></li>
-                    <li><a href="factions.html" class="active">Factions</a></li>
-                    <li><a href="characters.html">Survivors</a></li>
-                    <li><a href="books.html">Books</a></li>
-                    <li><a href="discord.html">Community Hub</a></li>
+           <!DOCTYPE html>
+<html lang="en" class="eden-terminal">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PROJECT EDEN TERMINAL</title>
+
+    <!-- Correct CSS path -->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="eden-body">
+
+    <!-- BOOT SCREEN -->
+    <div id="boot-screen" class="boot-screen">
+        <div class="boot-lines">
+            <p>> INITIALIZING PROJECT EDEN DATABASE...</p>
+            <p>> DECRYPTING CLASSIFIED FILES...</p>
+            <p>> RESTORING DAMAGED ARCHIVES...</p>
+            <p>> SYSTEM ONLINE.</p>
+        </div>
+        <div class="boot-progress">
+            <div class="boot-progress-bar"></div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT (HIDDEN UNTIL BOOT COMPLETES) -->
+    <div id="main-content" class="hidden">
+
+        <!-- HEADER -->
+        <header class="eden-header">
+            <div class="eden-header-inner">
+                <div class="eden-logo">
+                    <span class="eden-logo-title">PROJECT EDEN TERMINAL</span><br>
+                    <span class="eden-logo-subtitle">Recovered Government Database</span>
+                </div>
+
+                <nav class="eden-nav">
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="lore.html">Lore Database</a></li>
+                        <li><a href="factions.html">Factions</a></li>
+                        <li><a href="characters.html">Survivors</a></li>
+                        <li><a href="books.html">Books</a></li>
+                        <li><a href="community.html">Community Hub</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- MAIN -->
+        <main class="eden-main">
+
+            <section class="eden-section">
+                <h1>WELCOME, OPERATIVE</h1>
+                <p>
+                    You’ve accessed a partially restored government terminal once used by the Eden Directorate.
+                    Most files were corrupted during the Z‑Virus collapse — but fragments remain.
+                </p>
+                <p>
+                    This system is unstable. Some archives flicker. Some logs contradict each other.
+                    But every recovered file brings us closer to understanding what really happened.
+                </p>
+            </section>
+
+            <section class="eden-section">
+                <h2>RECENTLY RESTORED MODULES</h2>
+                <ul class="eden-list">
+                    <li>> Survivor Index updated with new field reports.</li>
+                    <li>> Faction intelligence partially decrypted.</li>
+                    <li>> Lore database stability improved by 12%.</li>
+                    <li>> Books module unlocked — official Integration Saga volumes accessible.</li>
                 </ul>
-            </nav>
+            </section>
+
+            <section class="eden-section">
+                <h2>BEGIN YOUR INVESTIGATION</h2>
+                <p>
+                    Choose a module above and start piecing together the truth behind the Integration Saga.
+                    Every page contains clues, hidden details, and connections waiting to be uncovered.
+                </p>
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="eden-footer">
+            <p>PROJECT EDEN TERMINAL — Recovered Database System</p>
+        </footer>
+
+    </div>
+
+    <!-- BOOT LOGIC -->
+    <script>
+        window.addEventListener('load', () => {
+            const boot = document.getElementById('boot-screen');
+            const main = document.getElementById('main-content');
+
+            setTimeout(() => {
+                boot.classList.add('hidden');
+                main.classList.remove('hidden');
+            }, 2500);
+        });
+    </script>
+
+</body>
+</html>
+
         </div>
     </header>
 
