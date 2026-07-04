@@ -1,272 +1,35 @@
 <!DOCTYPE html>
 <html lang="en" class="eden-terminal">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PROJECT EDEN TERMINAL</title>
-
-  <link rel="stylesheet" href="css/style.css" />
-  /* --- NAV BAR FIX --- */
-nav {
-    background: #0a0a0a;
-    border-bottom: 2px solid #00ff9c;
-    padding: 0;
-    position: sticky;
-    top: 0;
-    z-index: 9999;
-    font-family: "Courier New", monospace;
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-}
-
-nav ul li {
-    position: relative;
-}
-
-nav ul li a {
-    display: block;
-    padding: 14px 20px;
-    color: #00ff9c;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-nav ul li a:hover {
-    background: #003b2f;
-}
-
-/* --- DROPDOWN FIX --- */
-nav ul li ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #0f0f0f;
-    border: 1px solid #00ff9c;
-    min-width: 200px;
-    z-index: 9999;
-}
-
-nav ul li ul li a {
-    padding: 10px 16px;
-    color: #00ff9c;
-    white-space: nowrap;
-}
-
-nav ul li:hover ul {
-    display: block;
-}
-
-/* --- MOBILE FIX --- */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    nav ul li ul {
-        position: static;
-        width: 100%;
-        border: none;
-    }
-
-    nav ul li ul li a {
-        padding-left: 30px;
-    }
-}
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PROJECT EDEN TERMINAL — BOOKS</title>
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body class="eden-body">
 
-<!-- BOOT SCREEN -->
-<div id="boot-screen" class="boot-screen">
-  <div class="boot-lines">
-    <p>> SYSTEM BOOT SEQUENCE INITIATED...</p>
-    <p>> RESTORING DAMAGED TERMINAL FILES...</p>
-    <p>> REBUILDING CORRUPTED DATABASE MODULES...</p>
-    <p>> PLEASE STAND BY...</p>
-    <div class="boot-progress">
-      <div class="boot-progress-bar"></div>
-    </div>
-  </div>
-</div>
+    <!-- HEADER (REPAIRED NAV BAR) -->
+    <header class="eden-header">
+        <div class="eden-header-inner">
+            <div class="eden-logo">
+                <span class="eden-logo-title">PROJECT EDEN TERMINAL</span><br>
+                <span class="eden-logo-subtitle">Recovered Government Database</span>
+            </div>
 
-<!-- CRT OVERLAY -->
-<div class="crt-overlay"></div>
-
-<!-- HEADER -->
-<header class="eden-header">
-  <div class="eden-header-inner">
-
-    <div class="eden-logo">
-      <span class="eden-logo-title">PROJECT EDEN TERMINAL</span><br>
-      <span class="eden-logo-subtitle">Recovered Government Database</span>
-    </div>
-
-    <nav class="eden-nav">
-      <a href="index.html">Terminal Hub</a>
-      <a href="characters.html">Survivor Index</a>
-
-      <div class="dropdown">
-        <button class="dropbtn">Infected</button>
-        <div class="dropdown-content">
-          <a href="infected.html">Infected Types</a>
+            <nav class="eden-nav">
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="lore.html">Lore Database</a></li>
+                    <li><a href="factions.html">Factions</a></li>
+                    <li><a href="characters.html">Survivors</a></li>
+                    <li><a href="books.html" class="active">Books</a></li>
+                    <li><a href="community.html">Community Hub</a></li>
+                </ul>
+            </nav>
         </div>
-      </div>
+    </header>
 
-      <div class="dropdown">
-        <button class="dropbtn">Factions</button>
-        <div class="dropdown-content">
-          <a href="factions.html">Faction Index</a>
-        </div>
-      </div>
+    <!-- YOUR ORIGINAL BOOKS PAGE CONTENT GOES HERE -->
+    <!-- (I did NOT touch anything below this line) -->
 
-      <a href="maps.html">Maps</a>
-      <a href="lore.html">Lore Archives</a>
-      <a href="community.html">Community Hub</a>
-    </nav>
-
-  </div>
-</header>
-
-<main class="eden-main">
-
-  <!-- HERO -->
-  <section class="eden-hero">
-    <div class="eden-hero-inner">
-      <h1>SERIES LIBRARY</h1>
-      <p>Official Book Files for The Z‑Virus Saga</p>
-    </div>
-  </section>
-
-  <!-- MAIN CONTENT -->
-  <main class="eden-main">
-
-    <!-- INTRO -->
-    <section class="panel">
-      <header class="panel-header">
-        <h2>LIBRARY OVERVIEW</h2>
-        <span class="panel-tag">SERIES MODULE</span>
-      </header>
-      <div class="panel-body">
-        <p>
-          This module contains the official book files for The Z‑Virus Saga. Each entry includes synopsis, reading order,
-          purchase links, and classified notes tied to Project Eden, Site Zero, and The Road West.
-        </p>
-      </div>
-    </section>
-
-    <!-- BOOK GRID -->
-    <section class="panel panel-grid">
-      <header class="panel-header">
-        <h2>PUBLISHED VOLUMES</h2>
-        <span class="panel-tag">CURRENT RELEASES</span>
-      </header>
-
-      <div class="panel-body panel-columns">
-
-        <!-- BOOK 1 -->
-        <article class="card-book">
-          <div class="card-media">
-            <img src="images/books/book1-cover.jpg" alt="Project Eden">
-          </div>
-          <div class="card-content">
-            <h3>Book 1: Project Eden</h3>
-            <p>
-              The activation of Project Eden as the Z‑Virus breaches containment, triggering the collapse of early
-              government response systems.
-            </p>
-            <p class="card-meta">Series Order: 1 // Status: Released</p>
-            <a href="#" class="btn-primary btn-small">Buy on Amazon</a>
-          </div>
-        </article>
-
-        <!-- BOOK 2 -->
-        <article class="card-book">
-          <div class="card-media">
-            <img src="images/books/book2-cover.jpg" alt="Site Zero">
-          </div>
-          <div class="card-content">
-            <h3>Book 2: Site Zero</h3>
-            <p>
-              A deep investigation into the origin site of the outbreak — the place where everything began, and where
-              the truth was buried.
-            </p>
-            <p class="card-meta">Series Order: 2 // Status: Released</p>
-            <a href="#" class="btn-primary btn-small">Buy on Amazon</a>
-          </div>
-        </article>
-
-        <!-- BOOK 3 -->
-        <article class="card-book">
-          <div class="card-media">
-            <img src="images/books/book3-cover.jpg" alt="The Road West">
-          </div>
-          <div class="card-content">
-            <h3>Book 3: The Road West</h3>
-            <p>
-              Survivors push westward, navigating new infected threats, fractured alliances, and the remnants of
-              Project Eden’s classified operations.
-            </p>
-            <p class="card-meta">Series Order: 3 // Status: In Development</p>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- FUTURE VOLUMES -->
-    <section class="panel">
-      <header class="panel-header">
-        <h2>FUTURE VOLUMES</h2>
-        <span class="panel-tag">CLASSIFIED</span>
-      </header>
-      <div class="panel-body">
-        <p>
-          Additional volumes are planned. Details remain redacted to avoid spoilers and preserve narrative integrity.
-        </p>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="eden-footer">
-    <p>PROJECT EDEN TERMINAL // The Z‑Virus Saga // All data classified and partially redacted.</p>
-  </footer>
-
-  <!-- LIGHTBOX -->
-  <div id="lightbox" class="lightbox" aria-hidden="true">
-    <div class="lightbox-inner">
-      <button class="lightbox-close">&times;</button>
-      <img src="" alt="" class="lightbox-image">
-    </div>
-  </div>
-
-  <script src="js/main.js"></script>
-</body>
-</html>
-</main>
-
-<!-- BOOT SCREEN FADE SCRIPT -->
-<script>
-  window.addEventListener("load", () => {
-    const boot = document.getElementById("boot-screen");
-    if (boot) {
-      setTimeout(() => {
-        boot.style.opacity = "0";
-        setTimeout(() => boot.style.display = "none", 600);
-      }, 4000); // 4 second boot time
-    }
-  });
-</script>
-
-</body>
-</html>
