@@ -17,7 +17,7 @@
         <p>> SYSTEM ONLINE.</p>
     </div>
 
-    <!-- MAIN CONTENT (HIDDEN UNTIL BOOT COMPLETES) -->
+    <!-- MAIN CONTENT -->
     <div id="main-content" class="hidden">
 
         <!-- HEADER -->
@@ -89,7 +89,6 @@
             const boot = document.getElementById('boot-screen');
             const main = document.getElementById('main-content');
 
-            // Boot screen duration
             setTimeout(() => {
                 boot.classList.add('hidden');
                 main.classList.remove('hidden');
