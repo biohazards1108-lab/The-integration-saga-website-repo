@@ -5,68 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>PROJECT EDEN TERMINAL</title>
     <link rel="stylesheet" href="css/style.css" />
+    <style>
+        /* Quick inline fallback if CSS fails */
+        body { background-color: black; color: #00ff99; font-family: monospace; }
+        .boot-screen { text-align: center; padding-top: 20vh; }
+        .hidden { display: none; }
+    </style>
 </head>
 
 <body class="eden-body">
 
     <!-- BOOT SCREEN -->
     <div id="boot-screen" class="boot-screen">
-        <div class="boot-lines">
-            <p>> SYSTEM BOOT SEQUENCE INITIATED...</p>
-            <p>> RESTORING DAMAGED TERMINAL FILES...</p>
-            <p>> REBUILDING CORRUPTED DATABASE MODULES...</p>
-            <p>> PLEASE STAND BY...</p>
-
-            <div class="boot-progress">
-                <div class="boot-progress-bar"></div>
-            </div>
+        <p>> SYSTEM BOOT SEQUENCE INITIATED...</p>
+        <p>> RESTORING DAMAGED TERMINAL FILES...</p>
+        <p>> PLEASE STAND BY...</p>
+        <div class="boot-progress">
+            <div class="boot-progress-bar"></div>
         </div>
     </div>
 
-    <!-- CRT OVERLAY -->
-    <div class="crt-overlay"></div>
-
-    <!-- HEADER -->
-    <header class="eden-header">
-        <div class="eden-header-inner">
-            <div class="eden-logo">
-                <span class="eden-logo-title">PROJECT EDEN TERMINAL</span><br>
-                <span class="eden-logo-subtitle">Recovered Government Database</span>
-            </div>
-
-            <!-- NAV BAR -->
-            <nav class="eden-nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="lore.html">Lore Database</a></li>
-                    <li><a href="fractions.html">Fractions</a></li>
-                    <li><a href="characters.html">Survivors</a></li>
-                    <li><a href="discord.html">Community Hub</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
     <!-- MAIN CONTENT -->
-    <main class="eden-main">
-        <section class="eden-section">
-            <h1>WELCOME, OPERATIVE</h1>
-            <p>
-                You have accessed a partially restored government terminal.  
-                Classified files, survivor logs, faction intelligence, and historical archives  
-                have been reconstructed from corrupted data fragments.
-            </p>
+    <div id="main-content" class="hidden">
+        <header class="eden-header">
+            <div class="eden-header-inner">
+                <div class="eden-logo">
+                    <span class="eden-logo-title">PROJECT EDEN TERMINAL</span><br>
+                    <span class="eden-logo-subtitle">Recovered Government Database</span>
+                </div>
+                <nav class="eden-nav">
+                    <ul>
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="lore.html">Lore Database</a></li>
+                        <li><a href="fractions.html">Fractions</a></li>
+                        <li><a href="characters.html">Survivors</a></li>
+                        <li><a href="discord.html">Community Hub</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
 
-            <p>
-                Use the navigation above to explore the recovered database.
-            </p>
-        </section>
-    </main>
+        <main class="eden-main">
+            <section class="eden-section">
+                <h1>WELCOME, OPERATIVE</h1>
+                <p>
+                    You have accessed a partially restored government terminal.  
+                    Classified files, survivor logs, faction intelligence, and historical archives  
+                    have been reconstructed from corrupted data fragments.
+                </p>
+            </section>
+        </main>
 
-    <!-- FOOTER -->
-    <footer class="eden-footer">
-        <p>PROJECT EDEN TERMINAL — Recovered Database System</p>
-    </footer>
+        <footer class="eden-footer">
+            <p>PROJECT EDEN TERMINAL — Recovered Database System</p>
+        </footer>
+    </div>
+
+    <!-- FIXED SCRIPT -->
+    <script>
+        // Boot animation timeout fix
+        window.addEventListener('load', () => {
+            const boot = document.getElementById('boot-screen');
+            const main = document.getElementById('main-content');
+
+            // Show boot for 3 seconds, then reveal main content
+            setTimeout(() => {
+                boot.classList.add('hidden');
+                main.classList.remove('hidden');
+            }, 3000);
+        });
+    </script>
 
 </body>
 </html>
