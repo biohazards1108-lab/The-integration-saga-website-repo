@@ -1,150 +1,72 @@
 <!DOCTYPE html>
 <html lang="en" class="eden-terminal">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PROJECT EDEN TERMINAL</title>
-
-  <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PROJECT EDEN TERMINAL</title>
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body class="eden-body">
 
-<!-- BOOT SCREEN -->
-<div id="boot-screen" class="boot-screen">
-  <div class="boot-lines">
-    <p>> SYSTEM BOOT SEQUENCE INITIATED...</p>
-    <p>> RESTORING DAMAGED TERMINAL FILES...</p>
-    <p>> REBUILDING CORRUPTED DATABASE MODULES...</p>
-    <p>> PLEASE STAND BY...</p>
-    <div class="boot-progress">
-      <div class="boot-progress-bar"></div>
-    </div>
-  </div>
-</div>
+    <!-- BOOT SCREEN -->
+    <div id="boot-screen" class="boot-screen">
+        <div class="boot-lines">
+            <p>> SYSTEM BOOT SEQUENCE INITIATED...</p>
+            <p>> RESTORING DAMAGED TERMINAL FILES...</p>
+            <p>> REBUILDING CORRUPTED DATABASE MODULES...</p>
+            <p>> PLEASE STAND BY...</p>
 
-<!-- CRT OVERLAY -->
-<div class="crt-overlay"></div>
-
-<!-- HEADER -->
-<header class="eden-header">
-  <div class="eden-header-inner">
-
-    <div class="eden-logo">
-      <span class="eden-logo-title">PROJECT EDEN TERMINAL</span><br>
-      <span class="eden-logo-subtitle">Recovered Government Database</span>
+            <div class="boot-progress">
+                <div class="boot-progress-bar"></div>
+            </div>
+        </div>
     </div>
 
-    <nav class="eden-nav">
-      <a href="index.html">Terminal Hub</a>
-      <a href="characters.html">Survivor Index</a>
+    <!-- CRT OVERLAY -->
+    <div class="crt-overlay"></div>
 
-      <div class="dropdown">
-        <button class="dropbtn">Infected</button>
-        <div class="dropdown-content">
-          <a href="infected.html">Infected Types</a>
+    <!-- HEADER -->
+    <header class="eden-header">
+        <div class="eden-header-inner">
+            <div class="eden-logo">
+                <span class="eden-logo-title">PROJECT EDEN TERMINAL</span><br>
+                <span class="eden-logo-subtitle">Recovered Government Database</span>
+            </div>
+
+            <!-- NAV BAR -->
+            <nav class="eden-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="lore.html">Lore Database</a></li>
+                    <li><a href="fractions.html">Fractions</a></li>
+                    <li><a href="characters.html">Survivors</a></li>
+                    <li><a href="discord.html">Community Hub</a></li>
+                </ul>
+            </nav>
         </div>
-      </div>
+    </header>
 
-      <div class="dropdown">
-        <button class="dropbtn">Factions</button>
-        <div class="dropdown-content">
-          <a href="factions.html">Faction Index</a>
-        </div>
-      </div>
+    <!-- MAIN CONTENT -->
+    <main class="eden-main">
+        <section class="eden-section">
+            <h1>WELCOME, OPERATIVE</h1>
+            <p>
+                You have accessed a partially restored government terminal.  
+                Classified files, survivor logs, faction intelligence, and historical archives  
+                have been reconstructed from corrupted data fragments.
+            </p>
 
-      <a href="maps.html">Maps</a>
-      <a href="lore.html">Lore Archives</a>
-      <a href="community.html">Community Hub</a>
-    </nav>
+            <p>
+                Use the navigation above to explore the recovered database.
+            </p>
+        </section>
+    </main>
 
-  </div>
-</header>
-
-<main class="eden-main">
-
-
-<!-- MAIN CONTENT -->
-<main class="eden-main">
-
-  <h1 class="eden-title">PROJECT EDEN TERMINAL</h1>
-  <p class="eden-subtitle">Recovered files from the Integration Saga universe</p>
-
-  <!-- INTRO -->
-  <section class="eden-section">
-    <h2>Terminal Status: Restored</h2>
-    <p>
-      This government terminal was discovered in a damaged state, its internal systems corrupted by time,
-      radiation, and fungal interference. Restoration protocols have been successfully executed, and most
-      modules are now operational.
-    </p>
-    <p>
-      Some data remains fragmented. Some files are incomplete. But the core database is stable enough for
-      civilian access.
-    </p>
-  </section>
-
-  <!-- SYSTEM STATUS -->
-  <div class="terminal-panel">
-    <h3>System Diagnostics</h3>
-    <ul>
-      <li>✔ Core Database — Online</li>
-      <li>✔ Survivor Index — Operational</li>
-      <li>✔ Infected Records — Stable</li>
-      <li>✔ Faction Intelligence — Verified</li>
-      <li>✔ Map Archive — Synced</li>
-      <li>⚠ Legacy Files — Partial corruption detected</li>
-      <li>⚠ Audio Logs — Reconstruction in progress</li>
-    </ul>
-  </div>
-
-  <!-- WORLD STATE -->
-  <div class="terminal-panel">
-    <h3>World State Overview</h3>
-    <ul>
-      <li>• Fungal outbreak confirmed as radiation‑induced mutation</li>
-      <li>• Safehouse Network remains active</li>
-      <li>• Northern districts show increased infected movement</li>
-      <li>• Survivor groups continue to migrate west</li>
-    </ul>
-  </div>
-
-  <!-- BOOK INFO -->
-  <div class="terminal-panel">
-    <h3>Integration Saga Books</h3>
-    <p>
-      Explore the full story behind the terminal. Purchase the official Integration Saga novels:
-    </p>
-
-    <ul>
-      <li> <a class="book-link" href="https://www.amazon.com/Z-virus-Project-Eden-Integration-Saga-ebook/dp/B0H6J8Y58W/ref=sr_1_1?crid=2X0XRAF9Z75C1&dib=eyJ2IjoiMSJ9.Sqvz7wfY7nh8SWc31LnBlNC1aHVuW[...]">Buy Book 1</a></li>
-      <li> <a class="book-link" href="https://www.amazon.com/Z-Virus-Site-Zero-Integration-Saga-ebook/dp/B0H6MKHTS3/ref=sr_1_1?crid=3ELYCRK9PQHCM&dib=eyJ2IjoiMSJ9.8PD8IAk1IbnS9ePYicy7TDONIGJo5qJS[...]">Buy Book 2</a></li>
-      <li> <a class="book-link" href="https://amazon.com/s?k=The+Road+West+Book+3" target="_blank">The Road West — Book 3</a></li>
-    </ul>
-
-  </div>
-
-  <!-- OPERATOR NOTES -->
-  <div class="terminal-panel">
-    <h3>Operator Notes</h3>
-    <p>
-      This terminal is a living archive. As more corrupted files are reconstructed, additional modules will
-      unlock. Some data may require cross‑referencing survivor logs or faction intelligence.
-    </p>
-  </div>
-
-</main>
-
-<!-- BOOT SCREEN FADE SCRIPT -->
-<script>
-  window.addEventListener("load", () => {
-    const boot = document.getElementById("boot-screen");
-    if (boot) {
-      boot.style.opacity = "0";
-      setTimeout(() => boot.style.display = "none", 500);
-    }
-  });
-</script>
+    <!-- FOOTER -->
+    <footer class="eden-footer">
+        <p>PROJECT EDEN TERMINAL — Recovered Database System</p>
+    </footer>
 
 </body>
 </html>
