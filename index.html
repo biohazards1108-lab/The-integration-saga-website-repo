@@ -17,7 +17,7 @@
         <p>> SYSTEM ONLINE.</p>
     </div>
 
-    <!-- MAIN CONTENT -->
+    <!-- MAIN CONTENT (HIDDEN UNTIL BOOT COMPLETES) -->
     <div id="main-content" class="hidden">
 
         <!-- HEADER -->
@@ -27,38 +27,35 @@
                     <span class="eden-logo-title">PROJECT EDEN TERMINAL</span><br>
                     <span class="eden-logo-subtitle">Recovered Government Database</span>
                 </div>
-       <nav class="eden-nav">
-       <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="lore.html">Lore Database</a></li>
-        <li><a href="factions.html">Factions</a></li>
-        <li><a href="characters.html">Survivors</a></li>
-        <li><a href="books.html">Books</a></li>
-        <li><a href="discord.html">Community Hub</a></li>
-    </ul>
-</nav>
 
-              
+                <nav class="eden-nav">
+                    <ul>
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="lore.html">Lore Database</a></li>
+                        <li><a href="factions.html">Factions</a></li>
+                        <li><a href="characters.html">Survivors</a></li>
+                        <li><a href="books.html">Books</a></li>
+                        <li><a href="community.html">Community Hub</a></li>
+                    </ul>
+                </nav>
             </div>
         </header>
 
         <!-- MAIN -->
         <main class="eden-main">
 
-            <!-- INTRO -->
             <section class="eden-section">
                 <h1>WELCOME, OPERATIVE</h1>
                 <p>
-                    You’ve accessed a partially restored government terminal once used by the Eden Directorate.  
+                    You’ve accessed a partially restored government terminal once used by the Eden Directorate.
                     Most files were corrupted during the Z‑Virus collapse — but fragments remain.
                 </p>
                 <p>
-                    This system is still unstable. Some archives flicker. Some logs contradict each other.  
+                    This system is unstable. Some archives flicker. Some logs contradict each other.
                     But every recovered file brings us closer to understanding what really happened.
                 </p>
             </section>
 
-            <!-- HOOK SECTION -->
             <section class="eden-section">
                 <h2>RECENTLY RESTORED MODULES</h2>
                 <ul class="eden-list">
@@ -69,11 +66,10 @@
                 </ul>
             </section>
 
-            <!-- CTA -->
             <section class="eden-section">
                 <h2>BEGIN YOUR INVESTIGATION</h2>
                 <p>
-                    Choose a module above and start piecing together the truth behind the Integration Saga.  
+                    Choose a module above and start piecing together the truth behind the Integration Saga.
                     Every page contains clues, hidden details, and connections waiting to be uncovered.
                 </p>
             </section>
@@ -86,20 +82,20 @@
         </footer>
 
     </div>
-<script>
-    window.addEventListener('load', () => {
-        const boot = document.getElementById('boot-screen');
-        const main = document.getElementById('main-content');
 
-        // Show boot for 2.5 seconds, then reveal main content
-        setTimeout(() => {
-            boot.classList.add('hidden');
-            main.classList.remove('hidden');
-        }, 2500);
-    });
-</script>
+    <!-- BOOT LOGIC -->
+    <script>
+        window.addEventListener('load', () => {
+            const boot = document.getElementById('boot-screen');
+            const main = document.getElementById('main-content');
 
-   
+            // Boot screen duration
+            setTimeout(() => {
+                boot.classList.add('hidden');
+                main.classList.remove('hidden');
+            }, 2500);
+        });
+    </script>
 
 </body>
 </html>
