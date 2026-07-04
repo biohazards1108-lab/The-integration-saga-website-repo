@@ -1,107 +1,46 @@
 <!DOCTYPE html>
-<html lang="en" class="eden-terminal">
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>PROJECT EDEN TERMINAL</title>
-
-    <!-- Correct CSS path -->
-    <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROJECT EDEN TERMINAL</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="eden-body">
+<body>
 
-    <!-- BOOT SCREEN -->
-    <div id="boot-screen" class="boot-screen">
-        <div class="boot-lines">
-            <p>> INITIALIZING PROJECT EDEN DATABASE...</p>
-            <p>> DECRYPTING CLASSIFIED FILES...</p>
-            <p>> RESTORING DAMAGED ARCHIVES...</p>
-            <p>> SYSTEM ONLINE.</p>
-        </div>
-        <div class="boot-progress">
-            <div class="boot-progress-bar"></div>
-        </div>
-    </div>
+  <!-- ============================================================
+       TERMINAL NAV BAR (TOP)
+       ============================================================ -->
+  <nav class="terminal-nav">
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="characters.html">CHARACTERS</a></li>
+      <li><a href="factions.html">FACTIONS</a></li>
+      <li><a href="infected.html">INFECTED</a></li>
+      <li><a href="books.html">BOOKS</a></li>
+      <li><a href="lore.html">LORE ARCHIVE</a></li>
+    </ul>
+  </nav>
 
-    <!-- MAIN CONTENT (HIDDEN UNTIL BOOT COMPLETES) -->
-    <div id="main-content" class="hidden">
+  <!-- ============================================================
+       TERMINAL BOOT SCREEN
+       ============================================================ -->
+  <section class="terminal-boot">
+    <h1 class="terminal-cursor">PROJECT EDEN // SYSTEM BOOT</h1>
 
-        <!-- HEADER -->
-        <header class="eden-header">
-            <div class="eden-header-inner">
-                <div class="eden-logo">
-                    <span class="eden-logo-title">PROJECT EDEN TERMINAL</span><br>
-                    <span class="eden-logo-subtitle">Recovered Government Database</span>
-                </div>
+    <pre class="boot-sequence">
+INITIALIZING...
+> LOADING WORLD FILES............. OK
+> SCANNING CHARACTERS............ OK
+> SCANNING FACTIONS.............. OK
+> SCANNING INFECTED.............. OK
+> ACCESSING LORE ARCHIVE......... OK
 
-                <nav class="eden-nav">
-                    <ul class="nav-menu">
-                        <li><a href="index.html" class="active">Home</a></li>
-                        <li><a href="lore.html">Lore Database</a></li>
-                        <li><a href="factions.html">Factions</a></li>
-                        <li><a href="characters.html">Survivors</a></li>
-                        <li><a href="books.html">Books</a></li>
-                        <li><a href="community.html">Community Hub</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-
-        <!-- MAIN -->
-        <main class="eden-main">
-
-            <section class="eden-section">
-                <h1>WELCOME, OPERATIVE</h1>
-                <p>
-                    You’ve accessed a partially restored government terminal once used by the Eden Directorate.
-                    Most files were corrupted during the Z‑Virus collapse — but fragments remain.
-                </p>
-                <p>
-                    This system is unstable. Some archives flicker. Some logs contradict each other.
-                    But every recovered file brings us closer to understanding what really happened.
-                </p>
-            </section>
-
-            <section class="eden-section">
-                <h2>RECENTLY RESTORED MODULES</h2>
-                <ul class="eden-list">
-                    <li>> Survivor Index updated with new field reports.</li>
-                    <li>> Faction intelligence partially decrypted.</li>
-                    <li>> Lore database stability improved by 12%.</li>
-                    <li>> Books module unlocked — official Integration Saga volumes accessible.</li>
-                </ul>
-            </section>
-
-            <section class="eden-section">
-                <h2>BEGIN YOUR INVESTIGATION</h2>
-                <p>
-                    Choose a module above and start piecing together the truth behind the Integration Saga.
-                    Every page contains clues, hidden details, and connections waiting to be uncovered.
-                </p>
-            </section>
-
-        </main>
-
-        <!-- FOOTER -->
-        <footer class="eden-footer">
-            <p>PROJECT EDEN TERMINAL — Recovered Database System</p>
-        </footer>
-
-    </div>
-
-    <!-- BOOT LOGIC -->
-    <script>
-        window.addEventListener('load', () => {
-            const boot = document.getElementById('boot-screen');
-            const main = document.getElementById('main-content');
-
-            setTimeout(() => {
-                boot.classList.add('hidden');
-                main.classList.remove('hidden');
-            }, 2500);
-        });
-    </script>
+WELCOME USER.
+ENTER A DIRECTORY ABOVE TO BEGIN.
+    </pre>
+  </section>
 
 </body>
 </html>
