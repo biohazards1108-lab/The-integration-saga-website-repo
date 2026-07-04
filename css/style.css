@@ -368,3 +368,9 @@ html, body {
     display: flex;
   }
 }
+/* ============================================================
+   HIDDEN CLASS — REQUIRED FOR BOOT SCREEN TO DISAPPEAR
+   ============================================================ */
+.hidden {
+  display: none !important;
+}
