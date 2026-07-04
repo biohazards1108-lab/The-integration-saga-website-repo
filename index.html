@@ -5,74 +5,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>PROJECT EDEN TERMINAL</title>
     <link rel="stylesheet" href="css/style.css" />
-    <style>
-        /* Quick inline fallback if CSS fails */
-        body { background-color: black; color: #00ff99; font-family: monospace; }
-        .boot-screen { text-align: center; padding-top: 20vh; }
-        .hidden { display: none; }
-    </style>
 </head>
 
 <body class="eden-body">
 
     <!-- BOOT SCREEN -->
     <div id="boot-screen" class="boot-screen">
-        <p>> SYSTEM BOOT SEQUENCE INITIATED...</p>
-        <p>> RESTORING DAMAGED TERMINAL FILES...</p>
-        <p>> PLEASE STAND BY...</p>
-        <div class="boot-progress">
-            <div class="boot-progress-bar"></div>
-        </div>
+        <p>> INITIALIZING PROJECT EDEN DATABASE...</p>
+        <p>> DECRYPTING CLASSIFIED FILES...</p>
+        <p>> RESTORING DAMAGED ARCHIVES...</p>
+        <p>> SYSTEM ONLINE.</p>
     </div>
 
     <!-- MAIN CONTENT -->
     <div id="main-content" class="hidden">
+
+        <!-- HEADER -->
         <header class="eden-header">
             <div class="eden-header-inner">
                 <div class="eden-logo">
                     <span class="eden-logo-title">PROJECT EDEN TERMINAL</span><br>
                     <span class="eden-logo-subtitle">Recovered Government Database</span>
                 </div>
+
                 <nav class="eden-nav">
                     <ul>
                         <li><a href="index.html" class="active">Home</a></li>
                         <li><a href="lore.html">Lore Database</a></li>
                         <li><a href="fractions.html">Fractions</a></li>
                         <li><a href="characters.html">Survivors</a></li>
+                        <li><a href="books.html">Books</a></li>
                         <li><a href="discord.html">Community Hub</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
 
+        <!-- MAIN -->
         <main class="eden-main">
+
+            <!-- INTRO -->
             <section class="eden-section">
                 <h1>WELCOME, OPERATIVE</h1>
                 <p>
-                    You have accessed a partially restored government terminal.  
-                    Classified files, survivor logs, faction intelligence, and historical archives  
-                    have been reconstructed from corrupted data fragments.
+                    You’ve accessed a partially restored government terminal once used by the Eden Directorate.  
+                    Most files were corrupted during the Z‑Virus collapse — but fragments remain.
+                </p>
+                <p>
+                    This system is still unstable. Some archives flicker. Some logs contradict each other.  
+                    But every recovered file brings us closer to understanding what really happened.
                 </p>
             </section>
+
+            <!-- HOOK SECTION -->
+            <section class="eden-section">
+                <h2>RECENTLY RESTORED MODULES</h2>
+                <ul class="eden-list">
+                    <li>> Survivor Index updated with new field reports.</li>
+                    <li>> Faction intelligence partially decrypted.</li>
+                    <li>> Lore database stability improved by 12%.</li>
+                    <li>> Books module unlocked — official Integration Saga volumes accessible.</li>
+                </ul>
+            </section>
+
+            <!-- CTA -->
+            <section class="eden-section">
+                <h2>BEGIN YOUR INVESTIGATION</h2>
+                <p>
+                    Choose a module above and start piecing together the truth behind the Integration Saga.  
+                    Every page contains clues, hidden details, and connections waiting to be uncovered.
+                </p>
+            </section>
+
         </main>
 
+        <!-- FOOTER -->
         <footer class="eden-footer">
             <p>PROJECT EDEN TERMINAL — Recovered Database System</p>
         </footer>
+
     </div>
 
-    <!-- FIXED SCRIPT -->
+    <!-- SCRIPT -->
     <script>
-        // Boot animation timeout fix
         window.addEventListener('load', () => {
             const boot = document.getElementById('boot-screen');
             const main = document.getElementById('main-content');
-
-            // Show boot for 3 seconds, then reveal main content
             setTimeout(() => {
                 boot.classList.add('hidden');
                 main.classList.remove('hidden');
-            }, 3000);
+            }, 2500);
         });
     </script>
 
