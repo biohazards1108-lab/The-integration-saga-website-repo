@@ -1,129 +1,112 @@
 <!DOCTYPE html>
-<html lang="en" class="eden-terminal">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PROJECT EDEN TERMINAL</title>
-
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHARACTER DATABASE | PROJECT EDEN</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="eden-body">
+<body>
 
-<!-- BOOT SCREEN -->
-<div id="boot-screen" class="boot-screen">
-  <div class="boot-lines">
-    <p>> SYSTEM BOOT SEQUENCE INITIATED...</p>
-    <p>> RESTORING DAMAGED TERMINAL FILES...</p>
-    <p>> REBUILDING CORRUPTED DATABASE MODULES...</p>
-    <p>> PLEASE STAND BY...</p>
-    <div class="boot-progress">
-      <div class="boot-progress-bar"></div>
-    </div>
-  </div>
-</div>
+  <!-- NAVIGATION BAR -->
+  <nav class="terminal-nav">
+    <a href="index.html">HOME</a>
+    <a href="books.html">BOOKS</a>
+    <a href="factions.html">FACTIONS</a>
+    <a href="characters.html">CHARACTERS</a>
+    <a href="infected.html">INFECTED</a>
+  </nav>
 
-<!-- CRT OVERLAY -->
-<div class="crt-overlay"></div>
+  <h1 class="terminal-cursor">SURVIVOR DATABASE</h1>
 
-<header class="eden-header">
-    <div class="eden-header-inner">
-        <div class="eden-logo">
-            <span class="eden-logo-title">PROJECT EDEN TERMINAL</span><br>
-            <span class="eden-logo-subtitle">Recovered Government Database</span>
-        </div>
+  <section class="character-gallery">
 
-        <nav class="eden-nav">
-            <ul class="nav-menu">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="lore.html">Lore Database</a></li>
-                <li><a href="factions.html">Factions</a></li>
-                <li><a href="characters.html">Survivors</a></li>
-                <li><a href="books.html">Books</a></li>
-                <li><a href="community.html">Community Hub</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-
-
-  <!-- MAIN CONTENT -->
-  <main class="eden-main">
-
-    <h1 class="eden-title">SURVIVOR DATABASE</h1>
-    <p class="eden-subtitle">Recovered personnel records from the Integration Saga</p>
-
-    <div class="character-grid">
-
-      <!-- KEVIN -->
-      <div class="character-card">
-        <img src="images/kevin-marsh.png" alt="Kevin Marsh">
-        <h3>Kevin Marsh</h3>
+    <!-- Kevin Marsh -->
+    <div class="character-card">
+      <img src="assets/characters/kevin_marsh_nfe_portrait.png"
+           alt="Kevin Marsh"
+           class="character-image">
+      <div class="character-info">
+        <h2>Kevin Marsh</h2>
         <p>Age: 25</p>
-        <a class="view-btn" href="characters-info/kevin-marsh.html">View Profile</a>
+        <a href="characters/kevin-marsh.html" class="view-profile">View Profile</a>
       </div>
-
-      <!-- LILY -->
-      <div class="character-card">
-        <img src="images/lily.png" alt="Lily">
-        <h3>Lily</h3>
-        <p>Age: 18</p>
-        <a class="view-btn" href="characters-info/lily.html">View Profile</a>
-      </div>
-
-      <!-- ROSA -->
-      <div class="character-card">
-        <img src="images/rosa.png" alt="Rosa">
-        <h3>Rosa</h3>
-        <p>Age: 35</p>
-        <a class="view-btn" href="characters-info/rosa.html">View Profile</a>
-      </div>
-
-      <!-- DARIUS -->
-      <div class="character-card">
-        <img src="images/darius.png" alt="Darius">
-        <h3>Darius</h3>
-        <p>Age: 45</p>
-        <a class="view-btn" href="characters-info/darius.html">View Profile</a>
-      </div>
-
-      <!-- BEN -->
-      <div class="character-card">
-        <img src="images/ben.png" alt="Ben">
-        <h3>Ben</h3>
-        <p>Age: 32</p>
-        <a class="view-btn" href="characters-info/ben.html">View Profile</a>
-      </div>
-
-      <!-- EMMA -->
-      <div class="character-card">
-        <img src="images/emma.png" alt="Emma Marsh">
-        <h3>Emma Marsh</h3>
-        <p>Status: Deceased</p>
-        <a class="view-btn" href="characters-info/emma.html">View Profile</a>
-      </div>
-
-      <!-- ELIAS -->
-      <div class="character-card">
-        <img src="images/elias.png" alt="Elias">
-        <h3>Elias</h3>
-        <p>Age: 29</p>
-        <a class="view-btn" href="characters-info/elias.html">View Profile</a>
-      </div>
-
     </div>
-  </main>
 
-  <!-- BOOT SCREEN FADE SCRIPT -->
-  <script>
-    window.addEventListener("load", () => {
-      const boot = document.getElementById("boot-screen");
-      if (boot) {
-        boot.style.opacity = "0";
-        setTimeout(() => boot.style.display = "none", 600);
-      }
-    });
-  </script>
+    <!-- Lily -->
+    <div class="character-card">
+      <img src="assets/characters/lily_portrait.png"
+           alt="Lily"
+           class="character-image">
+      <div class="character-info">
+        <h2>Lily</h2>
+        <p>Age: 18</p>
+        <a href="characters/lily.html" class="view-profile">View Profile</a>
+      </div>
+    </div>
+
+    <!-- Rosa -->
+    <div class="character-card">
+      <img src="assets/characters/rosa_portrait.png"
+           alt="Rosa"
+           class="character-image">
+      <div class="character-info">
+        <h2>Rosa</h2>
+        <p>Age: 35</p>
+        <a href="characters/rosa.html" class="view-profile">View Profile</a>
+      </div>
+    </div>
+
+    <!-- Darius -->
+    <div class="character-card">
+      <img src="assets/characters/darius_portrait.png"
+           alt="Darius"
+           class="character-image">
+      <div class="character-info">
+        <h2>Darius</h2>
+        <p>Age: 45</p>
+        <a href="characters/darius.html" class="view-profile">View Profile</a>
+      </div>
+    </div>
+
+    <!-- Ben -->
+    <div class="character-card">
+      <img src="assets/characters/ben_portrait.png"
+           alt="Ben"
+           class="character-image">
+      <div class="character-info">
+        <h2>Ben</h2>
+        <p>Age: 32</p>
+        <a href="characters/ben.html" class="view-profile">View Profile</a>
+      </div>
+    </div>
+
+    <!-- Emma Marsh -->
+    <div class="character-card">
+      <img src="assets/characters/emma_marsh_portrait.png"
+           alt="Emma Marsh"
+           class="character-image">
+      <div class="character-info">
+        <h2>Emma Marsh</h2>
+        <p>Status: Deceased</p>
+        <a href="characters/emma-marsh.html" class="view-profile">View Profile</a>
+      </div>
+    </div>
+
+    <!-- Elias -->
+    <div class="character-card">
+      <img src="assets/characters/elias_portrait.png"
+           alt="Elias"
+           class="character-image">
+      <div class="character-info">
+        <h2>Elias</h2>
+        <p>Age: 29</p>
+        <a href="characters/elias.html" class="view-profile">View Profile</a>
+      </div>
+    </div>
+
+  </section>
 
 </body>
 </html>
