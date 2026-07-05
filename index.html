@@ -5,42 +5,142 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PROJECT EDEN TERMINAL</title>
   <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Boot screen overlay */
+    #boot-screen {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: black;
+      color: #00ff41;
+      font-family: "Courier New", monospace;
+      padding: 2rem;
+      z-index: 99999;
+      text-shadow: 0 0 8px rgba(0,255,65,0.8);
+      animation: bootFade 5s forwards;
+    }
+
+    @keyframes bootFade {
+      0% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { opacity: 0; visibility: hidden; }
+    }
+
+    /* Glitch effect */
+    @keyframes glitch {
+      0% { transform: none; opacity: 1; }
+      20% { transform: skew(0.5deg); opacity: 0.95; }
+      40% { transform: none; opacity: 1; }
+      60% { transform: skew(-0.5deg); opacity: 0.9; }
+      80% { transform: none; opacity: 1; }
+      100% { transform: none; opacity: 1; }
+    }
+
+    .glitch {
+      animation: glitch 0.3s linear;
+    }
+
+    /* Navbar boxes */
+    .terminal-nav {
+      width: 100%;
+      background: #001100;
+      border-bottom: 1px solid #00ff41;
+      box-shadow: 0 0 12px rgba(0,255,65,0.9);
+      padding: 0.5rem 0;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .terminal-nav a {
+      padding: 0.5rem 1rem;
+      border: 1px solid #00ff41;
+      background: #000800;
+      color: #00ff41;
+      text-decoration: none;
+      font-family: "Courier New", monospace;
+      text-shadow: 0 0 8px rgba(0,255,65,0.8);
+      transition: 0.3s ease;
+    }
+
+    .terminal-nav a:hover {
+      border-color: #ffbf00;
+      color: #ffbf00;
+      text-shadow: 0 0 8px rgba(255,191,0,0.8);
+    }
+
+    /* Hero section */
+    .hero {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: auto;
+      opacity: 0.9;
+    }
+  </style>
+
 </head>
 
 <body>
 
-  <!-- ============================================================
-       TERMINAL NAV BAR (TOP)
-       ============================================================ -->
-  <nav class="terminal-nav">
-    <ul>
-      <li><a href="index.html">HOME</a></li>
-      <li><a href="characters.html">CHARACTERS</a></li>
-      <li><a href="factions.html">FACTIONS</a></li>
-      <li><a href="infected.html">INFECTED</a></li>
-      <li><a href="books.html">BOOKS</a></li>
-      <li><a href="lore.html">LORE ARCHIVE</a></li>
-    </ul>
-  </nav>
+  <!-- BOOT SCREEN -->
+  <div id="boot-screen">
+    <pre>
+PROJECT EDEN // SYSTEM BOOT
 
-  <!-- ============================================================
-       TERMINAL BOOT SCREEN
-       ============================================================ -->
-  <section class="terminal-boot">
-    <h1 class="terminal-cursor">PROJECT EDEN // SYSTEM BOOT</h1>
-
-    <pre class="boot-sequence">
-INITIALIZING...
-> LOADING WORLD FILES............. OK
-> SCANNING CHARACTERS............ OK
-> SCANNING FACTIONS.............. OK
-> SCANNING INFECTED.............. OK
-> ACCESSING LORE ARCHIVE......... OK
+> INITIALIZING KERNEL................. OK
+> LOADING WORLD FILES................ OK
+> SCANNING CHARACTERS................ OK
+> SCANNING FACTIONS.................. OK
+> SCANNING INFECTED.................. OK
+> ACCESSING LORE ARCHIVE............. OK
 
 WELCOME USER.
-ENTER A DIRECTORY ABOVE TO BEGIN.
+ACCESS GRANTED.
     </pre>
+  </div>
+
+  <!-- NAVIGATION BAR -->
+  <nav class="terminal-nav">
+    <a href="books.html">BOOKS</a>
+    <a href="factions.html">FACTIONS</a>
+    <a href="characters.html">CHARACTERS</a>
+    <a href="infected.html">INFECTED</a>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h1 class="glitch-target">THE INTEGRATION SAGA — TERMINAL ACCESS POINT</h1>
+    <p>
+      This secure terminal grants access to classified information regarding the world,
+      characters, factions, infected strains, and books within <strong>The Integration Saga</strong>.
+      Navigate the directories above to uncover encrypted lore, dossiers, and restricted files.
+    </p>
   </section>
+
+  <script>
+    // Random glitch effect every 20–40 seconds
+    function randomGlitch() {
+      const target = document.querySelector(".glitch-target");
+      target.classList.add("glitch");
+      setTimeout(() => target.classList.remove("glitch"), 300);
+    }
+
+    setInterval(randomGlitch, Math.floor(Math.random() * (40000 - 20000)) + 20000);
+  </script>
 
 </body>
 </html>
