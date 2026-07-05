@@ -27,20 +27,6 @@
       100% { opacity: 0; visibility: hidden; }
     }
 
-    /* Glitch effect */
-    @keyframes glitch {
-      0% { transform: none; opacity: 1; }
-      20% { transform: skew(0.5deg); opacity: 0.95; }
-      40% { transform: none; opacity: 1; }
-      60% { transform: skew(-0.5deg); opacity: 0.9; }
-      80% { transform: none; opacity: 1; }
-      100% { transform: none; opacity: 1; }
-    }
-
-    .glitch {
-      animation: glitch 0.3s linear;
-    }
-
     /* Navbar boxes */
     .terminal-nav {
       width: 100%;
@@ -90,8 +76,21 @@
       margin: auto;
       opacity: 0.9;
     }
-  </style>
 
+    /* Random glitch effect */
+    @keyframes glitch {
+      0% { transform: none; opacity: 1; }
+      20% { transform: skew(0.5deg); opacity: 0.95; }
+      40% { transform: none; opacity: 1; }
+      60% { transform: skew(-0.5deg); opacity: 0.9; }
+      80% { transform: none; opacity: 1; }
+      100% { transform: none; opacity: 1; }
+    }
+
+    .glitch {
+      animation: glitch 0.3s linear;
+    }
+  </style>
 </head>
 
 <body>
@@ -123,11 +122,11 @@ ACCESS GRANTED.
 
   <!-- HERO SECTION -->
   <section class="hero">
-    <h1 class="glitch-target">THE INTEGRATION SAGA — TERMINAL ACCESS POINT</h1>
+    <h1 class="glitch-target">THE INTEGRATION SAGA — SECURE TERMINAL ACCESS</h1>
     <p>
-      This secure terminal grants access to classified information regarding the world,
-      characters, factions, infected strains, and books within <strong>The Integration Saga</strong>.
-      Navigate the directories above to uncover encrypted lore, dossiers, and restricted files.
+      Welcome to the official government‑recovered database for <strong>The Integration Saga</strong>.
+      This terminal provides classified access to personnel files, faction dossiers, infected strain
+      research, and encrypted book archives. Navigate the directories above to begin your investigation.
     </p>
   </section>
 
