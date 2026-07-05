@@ -8,6 +8,28 @@
     <!-- Correct CSS path -->
     <link rel="stylesheet" href="css/style.css" />
 </head>
+<!-- BOOT SCREEN -->
+<div id="boot-screen">
+  <pre>
+PROJECT EDEN // SYSTEM BOOT
+
+> INITIALIZING KERNEL................. OK
+> LOADING WORLD FILES................ OK
+> SCANNING CHARACTERS................ OK
+> SCANNING FACTIONS.................. OK
+> SCANNING INFECTED.................. OK
+> ACCESSING LORE ARCHIVE............. OK
+
+WELCOME USER.
+ACCESS GRANTED.
+  </pre>
+</div>
+<script>
+  setTimeout(() => {
+    const boot = document.getElementById('boot-screen');
+    if (boot) boot.style.display = 'none';
+  }, 5000);
+</script>
 
 <body class="eden-body">
 
