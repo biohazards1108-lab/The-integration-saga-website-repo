@@ -1,112 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>CHARACTER DATABASE | PROJECT EDEN</title>
   <link rel="stylesheet" href="css/style.css">
-</head>
+  <style>
+    /* Small overrides specific to this page (keeps everything mobile friendly) */
+    .character-gallery {
+      padding: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
 
+    .character-card {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      min-height: 100%;
+    }
+
+    .character-image {
+      height: 320px;
+      object-fit: cover;
+      width: 100%;
+      border-radius: 4px;
+    }
+
+    @media (max-width: 480px) {
+      .character-image { height: 220px; }
+      .terminal-nav a { padding: 0.6rem 0.8rem; font-size: 0.95rem; }
+    }
+  </style>
+</head>
 <body>
 
+  <!-- BOOT SCREEN (5s) -->
+  <div id="boot-screen">
+    <pre>
+PROJECT EDEN // SYSTEM BOOT
+
+> INITIALIZING KERNEL................. OK
+> LOADING WORLD FILES................ OK
+> SCANNING CHARACTERS................ OK
+> SCANNING FACTIONS.................. OK
+> SCANNING INFECTED.................. OK
+> ACCESSING LORE ARCHIVE............. OK
+
+WELCOME USER.
+ACCESS GRANTED.
+    </pre>
+  </div>
+
   <!-- NAVIGATION BAR -->
-  <nav class="terminal-nav">
+  <nav class="terminal-nav" role="navigation" aria-label="Main">
     <a href="index.html">HOME</a>
     <a href="books.html">BOOKS</a>
     <a href="factions.html">FACTIONS</a>
-    <a href="characters.html">CHARACTERS</a>
+    <a href="characters.html" aria-current="page">CHARACTERS</a>
     <a href="infected.html">INFECTED</a>
   </nav>
 
-  <h1 class="terminal-cursor">SURVIVOR DATABASE</h1>
+  <main>
+    <h1 class="terminal-cursor">SURVIVOR DATABASE</h1>
 
-  <section class="character-gallery">
+    <section class="character-gallery" aria-label="Character gallery">
 
-    <!-- Kevin Marsh -->
-    <div class="character-card">
-      <img src="assets/characters/kevin_marsh_nfe_portrait.png"
-           alt="Kevin Marsh"
-           class="character-image">
-      <div class="character-info">
-        <h2>Kevin Marsh</h2>
-        <p>Age: 25</p>
-        <a href="characters-info/kevin-marsh.html" class="view-profile">View Profile</a>
-      </div>
-    </div>
+      <!-- Kevin Marsh -->
+      <article class="character-card" aria-labelledby="kevin-name">
+        <img src="assets/characters/kevin_marsh_nfe_portrait.png"
+             alt="Kevin Marsh portrait"
+             class="character-image">
+        <div class="character-info">
+          <h2 id="kevin-name">Kevin Marsh</h2>
+          <p>Independent Scout / Survivor</p>
+          <a href="characters-info/kevin-marsh.html" class="view-profile">View Profile</a>
+        </div>
+      </article>
 
-    <!-- Lily -->
-    <div class="character-card">
-      <img src="assets/characters/lily_portrait.png"
-           alt="Lily"
-           class="character-image">
-      <div class="character-info">
-        <h2>Lily</h2>
-        <p>Age: 18</p>
-        <a href="characters-info/lily.html" class="view-profile">View Profile</a>
-      </div>
-    </div>
+      <!-- Lily Ross -->
+      <article class="character-card" aria-labelledby="lily-name">
+        <img src="assets/characters/lily_ross_nfe_portrait.png"
+             alt="Lily Ross portrait"
+             class="character-image">
+        <div class="character-info">
+          <h2 id="lily-name">Lily Ross</h2>
+          <p>NFE Medic / Healer</p>
+          <a href="characters-info/lily-ross.html" class="view-profile">View Profile</a>
+        </div>
+      </article>
 
-    <!-- Rosa -->
-    <div class="character-card">
-      <img src="assets/characters/rosa_portrait.png"
-           alt="Rosa"
-           class="character-image">
-      <div class="character-info">
-        <h2>Rosa</h2>
-        <p>Age: 35</p>
-        <a href="characters-info/rosa.html" class="view-profile">View Profile</a>
-      </div>
-    </div>
+      <!-- Rosa -->
+      <article class="character-card" aria-labelledby="rosa-name">
+        <img src="assets/characters/rosa_portrait.png"
+             alt="Rosa portrait"
+             class="character-image">
+        <div class="character-info">
+          <h2 id="rosa-name">Rosa</h2>
+          <p>Faction Operative</p>
+          <a href="characters-info/rosa.html" class="view-profile">View Profile</a>
+        </div>
+      </article>
 
-    <!-- Darius -->
-    <div class="character-card">
-      <img src="assets/characters/darius_portrait.png"
-           alt="Darius"
-           class="character-image">
-      <div class="character-info">
-        <h2>Darius</h2>
-        <p>Age: 45</p>
-        <a href="characters-info/darius.html" class="view-profile">View Profile</a>
-      </div>
-    </div>
+      <!-- Darius -->
+      <article class="character-card" aria-labelledby="darius-name">
+        <img src="assets/characters/darius_portrait.png"
+             alt="Darius portrait"
+             class="character-image">
+        <div class="character-info">
+          <h2 id="darius-name">Darius</h2>
+          <p>Warlord / Enforcer</p>
+          <a href="characters-info/darius.html" class="view-profile">View Profile</a>
+        </div>
+      </article>
 
-    <!-- Ben -->
-    <div class="character-card">
-      <img src="assets/characters/ben_portrait.png"
-           alt="Ben"
-           class="character-image">
-      <div class="character-info">
-        <h2>Ben</h2>
-        <p>Age: 32</p>
-        <a href="characters-info/ben.html" class="view-profile">View Profile</a>
-      </div>
-    </div>
+      <!-- Ben -->
+      <article class="character-card" aria-labelledby="ben-name">
+        <img src="assets/characters/ben_portrait.png"
+             alt="Ben portrait"
+             class="character-image">
+        <div class="character-info">
+          <h2 id="ben-name">Ben</h2>
+          <p>Engineer / Scavenger</p>
+          <a href="characters-info/ben.html" class="view-profile">View Profile</a>
+        </div>
+      </article>
 
-    <!-- Emma Marsh -->
-    <div class="character-card">
-      <img src="assets/characters/emma_marsh_portrait.png"
-           alt="Emma Marsh"
-           class="character-image">
-      <div class="character-info">
-        <h2>Emma Marsh</h2>
-        <p>Status: Deceased</p>
-        <a href="characters-info/emma-marsh.html" class="view-profile">View Profile</a>
-      </div>
-    </div>
+      <!-- Emma Marsh -->
+      <article class="character-card" aria-labelledby="emma-name">
+        <img src="assets/characters/emma_marsh_portrait.png"
+             alt="Emma Marsh portrait"
+             class="character-image">
+        <div class="character-info">
+          <h2 id="emma-name">Emma Marsh</h2>
+          <p>Status: Deceased</p>
+          <a href="characters-info/emma-marsh.html" class="view-profile">View Profile</a>
+        </div>
+      </article>
 
-    <!-- Elias -->
-    <div class="character-card">
-      <img src="assets/characters/elias_portrait.png"
-           alt="Elias"
-           class="character-image">
-      <div class="character-info">
-        <h2>Elias</h2>
-        <p>Age: 29</p>
-        <a href="characters-info/elias.html" class="view-profile">View Profile</a>
-      </div>
-    </div>
+      <!-- Elias -->
+      <article class="character-card" aria-labelledby="elias-name">
+        <img src="assets/characters/elias_portrait.png"
+             alt="Elias portrait"
+             class="character-image">
+        <div class="character-info">
+          <h2 id="elias-name">Elias</h2>
+          <p>Field Researcher</p>
+          <a href="characters-info/elias.html" class="view-profile">View Profile</a>
+        </div>
+      </article>
 
-  </section>
+    </section>
+  </main>
+
+  <script>
+    // Boot screen auto-hide (keeps 5s behavior even if CSS animation differs)
+    setTimeout(() => {
+      const boot = document.getElementById('boot-screen');
+      if (boot) boot.style.display = 'none';
+    }, 5000);
+
+    // Gentle random glitch on long sessions (20-40s)
+    function randomGlitch() {
+      const el = document.querySelector('.terminal-cursor') || document.querySelector('h1');
+      if (!el) return;
+      el.classList.add('glitch');
+      setTimeout(() => el.classList.remove('glitch'), 350);
+    }
+    setInterval(randomGlitch, Math.floor(Math.random() * (40000 - 20000)) + 20000);
+  </script>
 
 </body>
 </html>
