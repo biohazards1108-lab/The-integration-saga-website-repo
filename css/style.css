@@ -170,3 +170,20 @@ p {
     height: 260px;
   }
 }
+/* CHARACTER PORTRAIT FIX */
+.character-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+}
+
+.character-image {
+    width: 100%;
+    max-width: 320px;      /* prevents oversized images */
+    height: auto;          /* keeps proportions correct */
+    object-fit: contain;   /* prevents cropping */
+    border: 1px solid #00ff66;
+    background: #000;
+    padding: 4px;
+}
