@@ -1,145 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PROJECT EDEN TERMINAL</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integration Terminal</title>
 
-  <style>
-    /* Boot screen overlay */
-    #boot-screen {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: black;
-      color: #00ff41;
-      font-family: "Courier New", monospace;
-      padding: 2rem;
-      z-index: 99999;
-      text-shadow: 0 0 8px rgba(0,255,65,0.8);
-      animation: bootFade 5s forwards;
-    }
+    <style>
+        body {
+            background: #000;
+            color: #00ff88;
+            font-family: "Courier New", monospace;
+            padding: 40px;
+            text-align: center;
+        }
 
-    @keyframes bootFade {
-      0% { opacity: 1; }
-      90% { opacity: 1; }
-      100% { opacity: 0; visibility: hidden; }
-    }
+        #boot-sequence {
+            font-size: 1.2rem;
+            line-height: 1.6rem;
+            white-space: pre-line;
+        }
 
-    /* Navbar boxes */
-    .terminal-nav {
-      width: 100%;
-      background: #001100;
-      border-bottom: 1px solid #00ff41;
-      box-shadow: 0 0 12px rgba(0,255,65,0.9);
-      padding: 0.5rem 0;
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 0.8s forwards;
+        }
 
-    .terminal-nav a {
-      padding: 0.5rem 1rem;
-      border: 1px solid #00ff41;
-      background: #000800;
-      color: #00ff41;
-      text-decoration: none;
-      font-family: "Courier New", monospace;
-      text-shadow: 0 0 8px rgba(0,255,65,0.8);
-      transition: 0.3s ease;
-    }
-
-    .terminal-nav a:hover {
-      border-color: #ffbf00;
-      color: #ffbf00;
-      text-shadow: 0 0 8px rgba(255,191,0,0.8);
-    }
-
-    /* Hero section */
-    .hero {
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: auto;
-      opacity: 0.9;
-    }
-
-    /* Random glitch effect */
-    @keyframes glitch {
-      0% { transform: none; opacity: 1; }
-      20% { transform: skew(0.5deg); opacity: 0.95; }
-      40% { transform: none; opacity: 1; }
-      60% { transform: skew(-0.5deg); opacity: 0.9; }
-      80% { transform: none; opacity: 1; }
-      100% { transform: none; opacity: 1; }
-    }
-
-    .glitch {
-      animation: glitch 0.3s linear;
-    }
-  </style>
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+    </style>
 </head>
 
 <body>
 
-  <!-- BOOT SCREEN -->
-  <div id="boot-screen">
-    <pre>
-PROJECT EDEN // SYSTEM BOOT
+    <div id="boot-sequence"></div>
 
-> INITIALIZING KERNEL................. OK
-> LOADING WORLD FILES................ OK
-> SCANNING CHARACTERS................ OK
-> SCANNING FACTIONS.................. OK
-> SCANNING INFECTED.................. OK
-> ACCESSING LORE ARCHIVE............. OK
+    <script>
+        const lines = [
+            "INITIALIZING SYSTEM...",
+            "LOADING TERMINAL INTERFACE...",
+            "CHECKING INTEGRATION NODES...",
+            "AUTHENTICATING USER...",
+            "ACCESS GRANTED."
+        ];
 
-WELCOME USER.
-ACCESS GRANTED.
-    </pre>
-  </div>
+        const container = document.getElementById("boot-sequence");
 
-  <!-- NAVIGATION BAR -->
-  <nav class="terminal-nav">
-    <a href="books.html">BOOKS</a>
-    <a href="factions.html">FACTIONS</a>
-    <a href="characters.html">CHARACTERS</a>
-    <a href="infected.html">INFECTED</a>
-  </nav>
+        let i = 0;
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <h1 class="glitch-target">THE INTEGRATION SAGA — SECURE TERMINAL ACCESS</h1>
-    <p>
-      Welcome to the official government‑recovered database for <strong>The Integration Saga</strong>.
-      This terminal provides classified access to personnel files, faction dossiers, infected strain
-      research, and encrypted book archives. Navigate the directories above to begin your investigation.
-    </p>
-  </section>
+        function showNextLine() {
+            if (i < lines.length) {
+                const p = document.createElement("p");
+                p.textContent = lines[i];
+                p.classList.add("fade-in");
+                container.appendChild(p);
+                i++;
+                setTimeout(showNextLine, 600);
+            } else {
+                // Redirect after final line
+                setTimeout(() => {
+                    window.location.href = "characters.html";
+                }, 1200);
+            }
+        }
 
-  <script>
-    // Random glitch effect every 20–40 seconds
-    function randomGlitch() {
-      const target = document.querySelector(".glitch-target");
-      target.classList.add("glitch");
-      setTimeout(() => target.classList.remove("glitch"), 300);
-    }
-
-    setInterval(randomGlitch, Math.floor(Math.random() * (40000 - 20000)) + 20000);
-  </script>
+        showNextLine();
+    </script>
 
 </body>
 </html>
