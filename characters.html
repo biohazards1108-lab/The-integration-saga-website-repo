@@ -7,76 +7,23 @@
 
     <!-- Global Styles -->
     <link rel="stylesheet" href="css/style.css">
-<style>
-/* Card Grid */
-.character-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 20px;
-    width: 100%;
-}
-
-/* Character Card */
-.character-card {
-    background: #0a0a0a;
-    border: 2px solid #00ff88;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Portrait Container */
-.portrait-wrapper {
-    width: 100%;
-    max-width: 240px;
-    aspect-ratio: 1 / 1; /* Forces perfect square */
-    overflow: hidden;
-    border: 2px solid #00ff88;
-    margin-bottom: 12px;
-}
-
-/* Portrait Image */
-.portrait-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Prevents smushing or stretching */
-    object-position: center; /* Centers Kevin, Lily, etc. */
-}
-
-/* Name + Role */
-.character-info {
-    text-align: center;
-    color: #00ff88;
-    margin-bottom: 10px;
-}
-
-/* Button */
-.view-btn {
-    background: transparent;
-    border: 2px solid #00ff88;
-    color: #00ff88;
-    padding: 8px 12px;
-    cursor: pointer;
-    width: 100%;
-    text-align: center;
-}
-</style>
-    <!-- Boot Screen Script -->
     <script src="js/boot.js" defer></script>
 </head>
 
 <body class="terminal">
 
-    <!-- Boot Screen Import -->
-    <div id="boot-import"></div>
-    <script>
-        fetch("components/boot-screen.html")
-            .then(res => res.text())
-            .then(html => {
-                document.getElementById("boot-import").outerHTML = html;
-            });
-    </script>
+    <!-- BOOT SCREEN -->
+    <div id="boot-screen" class="boot-screen">
+      <div class="boot-lines">
+        <p>> SYSTEM BOOT SEQUENCE INITIATED...</p>
+        <p>> RESTORING DAMAGED TERMINAL FILES...</p>
+        <p>> REBUILDING CORRUPTED DATABASE MODULES...</p>
+        <p>> PLEASE STAND BY...</p>
+        <div class="boot-progress">
+          <div class="boot-progress-bar"></div>
+        </div>
+      </div>
+    </div>
 
     <!-- NAVIGATION -->
     <nav class="top-nav">
@@ -85,8 +32,8 @@
             <li><a href="books.html">BOOKS</a></li>
             <li><a href="factions.html">FACTIONS</a></li>
             <li><a href="characters.html" class="active">CHARACTERS</a></li>
-           <li><a href="infected.html">INFECTED</a></li>
-       <li><a href="atlas.html">World map</a></li>
+            <li><a href="infected.html">INFECTED</a></li>
+            <li><a href="atlas.html">World map</a></li>
         </ul>
     </nav>
 
@@ -154,5 +101,6 @@
         </div>
     </main>
 
+    <script src="js/main.js"></script>
 </body>
 </html>

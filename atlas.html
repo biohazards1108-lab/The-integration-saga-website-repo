@@ -5,77 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>PROJECT EDEN TERMINAL</title>
 
-<link rel="stylesheet" href="css/style.css">
-<script src="js/boot.js" defer></script>
-
-<!-- Boot screen import -->
-<div id="boot-import"></div>
-<script>
-  fetch("components/boot-screen.html")
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById("boot-import").outerHTML = html;
-    });
-</script>
-
- 
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/boot.js" defer></script>
 </head>
 
 <body class="eden-body">
 
-<!-- BOOT SCREEN -->
-<div id="boot-screen" class="boot-screen">
-  <div class="boot-lines">
-    <p>> SYSTEM BOOT SEQUENCE INITIATED...</p>
-    <p>> RESTORING DAMAGED TERMINAL FILES...</p>
-    <p>> REBUILDING CORRUPTED DATABASE MODULES...</p>
-    <p>> PLEASE STAND BY...</p>
-    <div class="boot-progress">
-      <div class="boot-progress-bar"></div>
+  <!-- BOOT SCREEN -->
+  <div id="boot-screen" class="boot-screen">
+    <div class="boot-lines">
+      <p>> SYSTEM BOOT SEQUENCE INITIATED...</p>
+      <p>> RESTORING DAMAGED TERMINAL FILES...</p>
+      <p>> REBUILDING CORRUPTED DATABASE MODULES...</p>
+      <p>> PLEASE STAND BY...</p>
+      <div class="boot-progress">
+        <div class="boot-progress-bar"></div>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- CRT OVERLAY -->
-<div class="crt-overlay"></div>
+  <!-- CRT OVERLAY -->
+  <div class="crt-overlay"></div>
 
-<!-- HEADER -->
-<header class="eden-header">
-  <div class="eden-header-inner">
+  <!-- HEADER -->
+  <header class="eden-header">
+    <div class="eden-header-inner">
 
-    <div class="eden-logo">
-      <span class="eden-logo-title">PROJECT EDEN TERMINAL</span><br>
-      <span class="eden-logo-subtitle">Recovered Government Database</span>
+      <div class="eden-logo">
+        <span class="eden-logo-title">PROJECT EDEN TERMINAL</span><br>
+        <span class="eden-logo-subtitle">Recovered Government Database</span>
+      </div>
+
+      <nav class="eden-nav">
+        <a href="index.html">Terminal Hub</a>
+        <a href="characters.html">Survivor Index</a>
+
+        <div class="dropdown">
+          <button class="dropbtn">Infected</button>
+          <div class="dropdown-content">
+            <a href="infected.html">Infected Types</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <button class="dropbtn">Factions</button>
+          <div class="dropdown-content">
+            <a href="factions.html">Faction Index</a>
+          </div>
+        </div>
+
+        <a href="maps.html">Maps</a>
+        <a href="lore.html">Lore Archives</a>
+        <a href="community.html">Community Hub</a>
+      </nav>
+
     </div>
-
-    <nav class="eden-nav">
-      <a href="index.html">Terminal Hub</a>
-      <a href="characters.html">Survivor Index</a>
-
-      <div class="dropdown">
-        <button class="dropbtn">Infected</button>
-        <div class="dropdown-content">
-          <a href="infected.html">Infected Types</a>
-        </div>
-      </div>
-
-      <div class="dropdown">
-        <button class="dropbtn">Factions</button>
-        <div class="dropdown-content">
-          <a href="factions.html">Faction Index</a>
-        </div>
-      </div>
-
-      <a href="maps.html">Maps</a>
-      <a href="lore.html">Lore Archives</a>
-      <a href="community.html">Community Hub</a>
-    </nav>
-
-  </div>
-</header>
-
-
-
+  </header>
 
   <!-- HERO -->
   <section class="eden-hero">
@@ -174,22 +159,5 @@
   </div>
 
   <script src="js/main.js"></script>
-</body>
-</html>
-</main>
-
-<!-- BOOT SCREEN FADE SCRIPT -->
-<script>
-  window.addEventListener("load", () => {
-    const boot = document.getElementById("boot-screen");
-    if (boot) {
-      setTimeout(() => {
-        boot.style.opacity = "0";
-        setTimeout(() => boot.style.display = "none", 600);
-      }, 4000); // 4 second boot time
-    }
-  });
-</script>
-
 </body>
 </html>

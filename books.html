@@ -5,21 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>PROJECT EDEN TERMINAL — BOOKS</title>
 
-  <link rel="stylesheet" href="css/style.css">
-<script src="js/boot.js" defer></script>
-
-<!-- Boot screen import -->
-<div id="boot-import"></div>
-<script>
-  fetch("components/boot-screen.html")
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById("boot-import").outerHTML = html;
-    });
-</script>
-
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/boot.js" defer></script>
+</head>
 
 <body class="eden-body">
+
+    <!-- BOOT SCREEN -->
+    <div id="boot-screen" class="boot-screen">
+      <div class="boot-lines">
+        <p>> SYSTEM BOOT SEQUENCE INITIATED...</p>
+        <p>> RESTORING DAMAGED TERMINAL FILES...</p>
+        <p>> REBUILDING CORRUPTED DATABASE MODULES...</p>
+        <p>> PLEASE STAND BY...</p>
+        <div class="boot-progress">
+          <div class="boot-progress-bar"></div>
+        </div>
+      </div>
+    </div>
 
     <!-- HEADER -->
     <header class="eden-header">
@@ -64,7 +67,7 @@
                     The outbreak begins. Government systems fail. Survivors emerge from the ashes of the Eden Directorate.
                     This volume contains the earliest accounts of the Z‑Virus collapse.
                 </p>
-                <a class="btn-primary" href="#" target="https://www.amazon.com/s?k=the+z+virus+project+eden&crid=1AJHH26NX792O&sprefix=the+z-virus%2Caps%2C637&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_3_11">Purchase on Amazon</a>
+                <a class="btn-primary" href="#" target="https://www.amazon.com/s?k=the+z+virus+project+eden&crid=1AJHH26NX792O&sprefix=the+z-virus%2Caps%2C637&ref=nb_sb_ss_p13n-expert-pd-ops-ranke[...]
             </div>
         </section>
 
@@ -79,7 +82,7 @@
                     The truth behind the White Coats, the experiments, and the classified Site Zero facility.
                     This volume expands the world and reveals hidden connections between factions.
                 </p>
-                <a class="btn-primary" href="#" target="https://www.amazon.com/s?k=the+z+virus+site+zero&crid=16UCXMUT536HA&sprefix=the+z+virus+site+%2Caps%2C371&ref=nb_sb_ss_p13n-expert-pd-ops-ranker_1_17">Purchase on Amazon</a>
+                <a class="btn-primary" href="#" target="https://www.amazon.com/s?k=the+z+virus+site+zero&crid=16UCXMUT536HA&sprefix=the+z+virus+site+%2Caps%2C371&ref=nb_sb_ss_p13n-expert-pd-ops-ra[...]
             </div>
         </section>
 
@@ -104,5 +107,6 @@
         <p>PROJECT EDEN TERMINAL — Recovered Database System</p>
     </footer>
 
+    <script src="js/main.js"></script>
 </body>
 </html>
