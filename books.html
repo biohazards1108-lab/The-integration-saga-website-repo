@@ -5,32 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>PROJECT EDEN TERMINAL — BOOKS</title>
 
-    <!-- Correct CSS path -->
-   <link rel="stylesheet" href="..css/style.css">
+  <link rel="stylesheet" href="css/style.css">
+<script src="js/boot.js" defer></script>
 
-</head>
-<!-- BOOT SCREEN -->
-<div id="boot-screen">
-  <pre>
-PROJECT EDEN // SYSTEM BOOT
-
-> INITIALIZING KERNEL................. OK
-> LOADING WORLD FILES................ OK
-> SCANNING CHARACTERS................ OK
-> SCANNING FACTIONS.................. OK
-> SCANNING INFECTED.................. OK
-> ACCESSING LORE ARCHIVE............. OK
-
-WELCOME USER.
-ACCESS GRANTED.
-  </pre>
-</div>
+<!-- Boot screen import -->
+<div id="boot-import"></div>
 <script>
-  setTimeout(() => {
-    const boot = document.getElementById('boot-screen');
-    if (boot) boot.style.display = 'none';
-  }, 5000);
+  fetch("components/boot-screen.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("boot-import").outerHTML = html;
+    });
 </script>
+
 
 <body class="eden-body">
 
