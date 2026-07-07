@@ -5,7 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>PROJECT EDEN TERMINAL</title>
 
- <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/boot.js" defer></script>
+
+<!-- Boot screen import -->
+<div id="boot-import"></div>
+<script>
+  fetch("components/boot-screen.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("boot-import").outerHTML = html;
+    });
+</script>
+
  
 </head>
 
