@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="eden-terminal">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +10,7 @@
     <script src="js/boot.js" defer></script>
 </head>
 
-<body class="terminal">
+<body class="eden-body">
 
     <!-- BOOT SCREEN -->
     <div id="boot-screen" class="boot-screen">
@@ -25,17 +25,32 @@
       </div>
     </div>
 
-    <!-- NAVIGATION -->
-    <nav class="top-nav">
-        <ul>
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="books.html">BOOKS</a></li>
-            <li><a href="factions.html">FACTIONS</a></li>
-            <li><a href="characters.html" class="active">CHARACTERS</a></li>
-            <li><a href="infected.html">INFECTED</a></li>
-            <li><a href="atlas.html">World map</a></li>
-        </ul>
-    </nav>
+    <!-- CRT OVERLAY -->
+    <div class="crt-overlay"></div>
+
+    <!-- HEADER -->
+    <header class="eden-header">
+        <div class="eden-header-inner">
+            <div class="eden-logo">
+                <span class="eden-logo-title">PROJECT EDEN TERMINAL</span><br>
+                <span class="eden-logo-subtitle">Recovered Government Database</span>
+            </div>
+
+            <nav class="eden-nav">
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="books.html">Books</a></li>
+                    <li><a href="characters.html" class="active">Survivors</a></li>
+                    <li><a href="infected.html">Infected</a></li>
+                    <li><a href="factions.html">Factions</a></li>
+                    <li><a href="atlas.html">Maps</a></li>
+                    <li><a href="lore.html">Lore</a></li>
+                    <li><a href="community.html">Community</a></li>
+                    <li><a href="discord.html">Discord</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
     <main>
         <h1 class="page-title">SURVIVOR DATABASE</h1>
@@ -100,6 +115,10 @@
 
         </div>
     </main>
+
+    <footer class="eden-footer">
+        <p>PROJECT EDEN TERMINAL — Recovered Database System</p>
+    </footer>
 
     <script src="js/main.js"></script>
 </body>
