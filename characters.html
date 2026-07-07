@@ -10,8 +10,11 @@
 
     <!-- Boot Screen Script -->
     <script src="js/boot.js" defer></script>
+</head>
 
-    <!-- Import Boot Screen -->
+<body class="terminal">
+
+    <!-- Boot Screen Import -->
     <div id="boot-import"></div>
     <script>
         fetch("components/boot-screen.html")
@@ -20,107 +23,77 @@
                 document.getElementById("boot-import").outerHTML = html;
             });
     </script>
-</head>
-
-<body class="terminal">
 
     <!-- NAVIGATION -->
     <nav class="top-nav">
-        <a href="index.html">HOME</a>
-        <a href="books.html">BOOKS</a>
-        <a href="factions.html">FACTIONS</a>
-        <a href="characters.html" class="active">CHARACTERS</a>
-        <a href="infected.html">INFECTED</a>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="books.html">BOOKS</a></li>
+            <li><a href="factions.html">FACTIONS</a></li>
+            <li><a href="characters.html" class="active">CHARACTERS</a></li>
+            <li><a href="infected.html">INFECTED</a></li>
+        </ul>
     </nav>
 
     <main>
         <h1 class="page-title">SURVIVOR DATABASE</h1>
 
-        <!-- CHARACTER GRID -->
         <div class="character-grid">
 
             <!-- KEVIN MARSH -->
             <div class="character-card">
-                <div class="portrait">
-                    <img src="assets/characters/kevin-marsh.png" alt="Kevin Marsh">
-                </div>
-                <div class="info">
-                    <h3>Kevin Marsh</h3>
-                    <p class="role">Independent Scout / Survivor</p>
-                    <a href="characters-info/kevin-marsh.html" class="view-btn">View Profile</a>
-                </div>
+                <img src="assets/characters/kevin-marsh.png" alt="Kevin Marsh">
+                <h3>Kevin Marsh</h3>
+                <p>Independent Scout / Survivor</p>
+                <a href="characters-info/kevin-marsh.html" class="view-btn">View Profile</a>
             </div>
 
             <!-- LILY ROSS -->
             <div class="character-card">
-                <div class="portrait">
-                    <img src="assets/characters/lily-ross.png" alt="Lily Ross">
-                </div>
-                <div class="info">
-                    <h3>Lily Ross</h3>
-                    <p class="role">Medic / Healer</p>
-                    <a href="characters-info/lily-ross.html" class="view-btn">View Profile</a>
-                </div>
+                <img src="assets/characters/lily-ross.png" alt="Lily Ross">
+                <h3>Lily Ross</h3>
+                <p>Medic / Healer</p>
+                <a href="characters-info/lily-ross.html" class="view-btn">View Profile</a>
             </div>
 
             <!-- ROSA ROSS -->
             <div class="character-card">
-                <div class="portrait">
-                    <img src="assets/characters/rosa-ross.png" alt="Rosa Ross">
-                </div>
-                <div class="info">
-                    <h3>Rosa Ross</h3>
-                    <p class="role">Faction Operative</p>
-                    <a href="characters-info/rosa-ross.html" class="view-btn">View Profile</a>
-                </div>
+                <img src="assets/characters/rosa-ross.png" alt="Rosa Ross">
+                <h3>Rosa Ross</h3>
+                <p>Field Medic / Survivor</p>
+                <a href="characters-info/rosa-ross.html" class="view-btn">View Profile</a>
             </div>
 
             <!-- DARIUS -->
             <div class="character-card">
-                <div class="portrait">
-                    <img src="assets/characters/darius.png" alt="Darius">
-                </div>
-                <div class="info">
-                    <h3>Darius</h3>
-                    <p class="role">Warlord / Enforcer</p>
-                    <a href="characters-info/darius.html" class="view-btn">View Profile</a>
-                </div>
+                <img src="assets/characters/darius.png" alt="Darius">
+                <h3>Darius</h3>
+                <p>Warlord / Enforcer</p>
+                <a href="characters-info/darius.html" class="view-btn">View Profile</a>
             </div>
 
             <!-- BEN -->
             <div class="character-card">
-                <div class="portrait">
-                    <img src="assets/characters/ben.png" alt="Ben">
-                </div>
-                <div class="info">
-                    <h3>Ben</h3>
-                    <p class="role">Engineer / Scavenger</p>
-                    <a href="characters-info/ben.html" class="view-btn">View Profile</a>
-                </div>
+                <img src="assets/characters/ben.png" alt="Ben">
+                <h3>Ben</h3>
+                <p>Engineer / Scavenger</p>
+                <a href="characters-info/ben.html" class="view-btn">View Profile</a>
             </div>
 
             <!-- EMMA MARSH -->
             <div class="character-card">
-                <div class="portrait">
-                    <img src="assets/characters/emma-marsh.png" alt="Emma Marsh">
-                </div>
-                <div class="info">
-                    <h3>Emma Marsh</h3>
-                    <p class="role">Status: Deceased</p>
-                    <a href="characters-info/emma-marsh.html" class="view-btn">View Profile</a>
-                </div>
+                <img src="assets/characters/emma-marsh.png" alt="Emma Marsh">
+                <h3>Emma Marsh</h3>
+                <p>Status: Deceased</p>
+                <a href="characters-info/emma-marsh.html" class="view-btn">View Profile</a>
             </div>
 
             <!-- ELIAS -->
             <div class="character-card">
-                <div class="portrait">
-                    <img src="assets/characters/elias.png" alt="Elias">
-                </div>
-                <div class="info">
-                    <h3>Elias</h3>
-                    <p class="role">Field Researcher</p>
-                    <a href="characters-info/elias.html" class="view-btn">View Profile</a>
-                </div>
+                <img src="assets/characters/elias.png" alt="Elias">
+                <h3>Elias</h3>
+                <p>Field Researcher</p>
+                <a href="characters-info/elias.html" class="view-btn">View Profile</a>
             </div>
 
         </div>
