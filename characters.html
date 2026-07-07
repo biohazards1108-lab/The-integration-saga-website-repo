@@ -7,7 +7,61 @@
 
     <!-- Global Styles -->
     <link rel="stylesheet" href="css/style.css">
+<style>
+/* Card Grid */
+.character-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
 
+/* Character Card */
+.character-card {
+    background: #0a0a0a;
+    border: 2px solid #00ff88;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Portrait Container */
+.portrait-wrapper {
+    width: 100%;
+    max-width: 240px;
+    aspect-ratio: 1 / 1; /* Forces perfect square */
+    overflow: hidden;
+    border: 2px solid #00ff88;
+    margin-bottom: 12px;
+}
+
+/* Portrait Image */
+.portrait-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Prevents smushing or stretching */
+    object-position: center; /* Centers Kevin, Lily, etc. */
+}
+
+/* Name + Role */
+.character-info {
+    text-align: center;
+    color: #00ff88;
+    margin-bottom: 10px;
+}
+
+/* Button */
+.view-btn {
+    background: transparent;
+    border: 2px solid #00ff88;
+    color: #00ff88;
+    padding: 8px 12px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
+</style>
     <!-- Boot Screen Script -->
     <script src="js/boot.js" defer></script>
 </head>
