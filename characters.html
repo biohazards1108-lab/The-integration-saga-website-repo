@@ -1,188 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>CHARACTER DATABASE | PROJECT EDEN</title>
-<link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHARACTER DATABASE | PROJECT EDEN</title>
 
-  <style>
-    /* Responsive grid adjustments */
-    .character-gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.2rem;
-      padding: 2rem;
-    }
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="css/style.css">
 
-    .character-card {
-      background: #001100;
-      border: 1px solid #00ff41;
-      border-radius: 6px;
-      box-shadow: 0 0 12px rgba(0,255,65,0.6);
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+    <!-- Boot Screen Script -->
+    <script src="js/boot.js" defer></script>
 
-    .character-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 0 18px rgba(255,191,0,0.8);
-    }
-
-    .character-image {
-      width: 100%;
-      height: 320px;
-      object-fit: cover;
-      border-bottom: 1px solid #00ff41;
-    }
-
-    .character-info {
-      padding: 1rem;
-      text-align: center;
-    }
-
-    @media (max-width: 480px) {
-      .character-image { height: 220px; }
-      .terminal-nav a { padding: 0.6rem 0.8rem; font-size: 0.9rem; }
-    }
-  </style>
+    <!-- Import Boot Screen -->
+    <div id="boot-import"></div>
+    <script>
+        fetch("components/boot-screen.html")
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById("boot-import").outerHTML = html;
+            });
+    </script>
 </head>
-<body>
 
-  <!-- BOOT SCREEN -->
-  <div id="boot-screen">
-    <pre>
-PROJECT EDEN // SYSTEM BOOT
+<body class="terminal">
 
-> INITIALIZING KERNEL................. OK
-> LOADING WORLD FILES................ OK
-> SCANNING CHARACTERS................ OK
-> SCANNING FACTIONS.................. OK
-> SCANNING INFECTED.................. OK
-> ACCESSING LORE ARCHIVE............. OK
+    <!-- NAVIGATION -->
+    <nav class="top-nav">
+        <a href="index.html">HOME</a>
+        <a href="books.html">BOOKS</a>
+        <a href="factions.html">FACTIONS</a>
+        <a href="characters.html" class="active">CHARACTERS</a>
+        <a href="infected.html">INFECTED</a>
+    </nav>
 
-WELCOME USER.
-ACCESS GRANTED.
-    </pre>
-  </div>
+    <main>
+        <h1 class="page-title">SURVIVOR DATABASE</h1>
 
-  <!-- NAVIGATION BAR -->
-  <nav class="terminal-nav">
-    <a href="index.html">HOME</a>
-    <a href="books.html">BOOKS</a>
-    <a href="factions.html">FACTIONS</a>
-    <a href="characters.html" aria-current="page">CHARACTERS</a>
-    <a href="infected.html">INFECTED</a>
-  </nav>
+        <!-- CHARACTER GRID -->
+        <div class="character-grid">
 
-  <main>
-    <h1 class="terminal-cursor">SURVIVOR DATABASE</h1>
+            <!-- KEVIN MARSH -->
+            <div class="character-card">
+                <div class="portrait">
+                    <img src="assets/characters/kevin-marsh.png" alt="Kevin Marsh">
+                </div>
+                <div class="info">
+                    <h3>Kevin Marsh</h3>
+                    <p class="role">Independent Scout / Survivor</p>
+                    <a href="characters-info/kevin-marsh.html" class="view-btn">View Profile</a>
+                </div>
+            </div>
 
-    <section class="character-gallery">
+            <!-- LILY ROSS -->
+            <div class="character-card">
+                <div class="portrait">
+                    <img src="assets/characters/lily-ross.png" alt="Lily Ross">
+                </div>
+                <div class="info">
+                    <h3>Lily Ross</h3>
+                    <p class="role">Medic / Healer</p>
+                    <a href="characters-info/lily-ross.html" class="view-btn">View Profile</a>
+                </div>
+            </div>
 
-      <!-- Kevin Marsh -->
-      <div class="character-card">
-        <img src="assets/characters/kevin_marsh_nfe_portrait.png"
-             alt="Kevin Marsh portrait"
-             class="character-image">
-        <div class="character-info">
-          <h2>Kevin Marsh</h2>
-          <p>Independent Scout / Survivor</p>
-          <a href="characters-info/kevin-marsh.html" class="view-profile">View Profile</a>
+            <!-- ROSA ROSS -->
+            <div class="character-card">
+                <div class="portrait">
+                    <img src="assets/characters/rosa-ross.png" alt="Rosa Ross">
+                </div>
+                <div class="info">
+                    <h3>Rosa Ross</h3>
+                    <p class="role">Faction Operative</p>
+                    <a href="characters-info/rosa-ross.html" class="view-btn">View Profile</a>
+                </div>
+            </div>
+
+            <!-- DARIUS -->
+            <div class="character-card">
+                <div class="portrait">
+                    <img src="assets/characters/darius.png" alt="Darius">
+                </div>
+                <div class="info">
+                    <h3>Darius</h3>
+                    <p class="role">Warlord / Enforcer</p>
+                    <a href="characters-info/darius.html" class="view-btn">View Profile</a>
+                </div>
+            </div>
+
+            <!-- BEN -->
+            <div class="character-card">
+                <div class="portrait">
+                    <img src="assets/characters/ben.png" alt="Ben">
+                </div>
+                <div class="info">
+                    <h3>Ben</h3>
+                    <p class="role">Engineer / Scavenger</p>
+                    <a href="characters-info/ben.html" class="view-btn">View Profile</a>
+                </div>
+            </div>
+
+            <!-- EMMA MARSH -->
+            <div class="character-card">
+                <div class="portrait">
+                    <img src="assets/characters/emma-marsh.png" alt="Emma Marsh">
+                </div>
+                <div class="info">
+                    <h3>Emma Marsh</h3>
+                    <p class="role">Status: Deceased</p>
+                    <a href="characters-info/emma-marsh.html" class="view-btn">View Profile</a>
+                </div>
+            </div>
+
+            <!-- ELIAS -->
+            <div class="character-card">
+                <div class="portrait">
+                    <img src="assets/characters/elias.png" alt="Elias">
+                </div>
+                <div class="info">
+                    <h3>Elias</h3>
+                    <p class="role">Field Researcher</p>
+                    <a href="characters-info/elias.html" class="view-btn">View Profile</a>
+                </div>
+            </div>
+
         </div>
-      </div>
-
-      <!-- Lily Ross -->
-      <div class="character-card">
-        <img src="assets/characters/lily_ross_nfe_portrait.png"
-             alt="Lily Ross portrait"
-             class="character-image">
-        <div class="character-info">
-          <h2>Lily Ross</h2>
-          <p>NFE Medic / Healer</p>
-          <a href="characters-info/lily-ross.html" class="view-profile">View Profile</a>
-        </div>
-      </div>
-
-      <!-- Rosa -->
-      <div class="character-card">
-        <img src="assets/characters/rosa_portrait.png"
-             alt="Rosa portrait"
-             class="character-image">
-        <div class="character-info">
-          <h2>Rosa</h2>
-          <p>Faction Operative</p>
-          <a href="characters-info/rosa.html" class="view-profile">View Profile</a>
-        </div>
-      </div>
-
-      <!-- Darius -->
-      <div class="character-card">
-        <img src="assets/characters/darius_portrait.png"
-             alt="Darius portrait"
-             class="character-image">
-        <div class="character-info">
-          <h2>Darius</h2>
-          <p>Warlord / Enforcer</p>
-          <a href="characters-info/darius.html" class="view-profile">View Profile</a>
-        </div>
-      </div>
-
-      <!-- Ben -->
-      <div class="character-card">
-        <img src="assets/characters/ben_portrait.png"
-             alt="Ben portrait"
-             class="character-image">
-        <div class="character-info">
-          <h2>Ben</h2>
-          <p>Engineer / Scavenger</p>
-          <a href="characters-info/ben.html" class="view-profile">View Profile</a>
-        </div>
-      </div>
-
-      <!-- Emma Marsh -->
-      <div class="character-card">
-        <img src="assets/characters/emma_marsh_portrait.png"
-             alt="Emma Marsh portrait"
-             class="character-image">
-        <div class="character-info">
-          <h2>Emma Marsh</h2>
-          <p>Status: Deceased</p>
-          <a href="characters-info/emma-marsh.html" class="view-profile">View Profile</a>
-        </div>
-      </div>
-
-      <!-- Elias -->
-      <div class="character-card">
-        <img src="assets/characters/elias_portrait.png"
-             alt="Elias portrait"
-             class="character-image">
-        <div class="character-info">
-          <h2>Elias</h2>
-          <p>Field Researcher</p>
-          <a href="characters-info/elias.html" class="view-profile">View Profile</a>
-        </div>
-      </div>
-
-    </section>
-  </main>
-
-  <script>
-    // Hide boot screen after 5 seconds
-    setTimeout(() => {
-      const boot = document.getElementById('boot-screen');
-      if (boot) boot.style.display = 'none';
-    }, 5000);
-
-    // Random glitch effect every 20–40 seconds
-    function randomGlitch() {
-      const el = document.querySelector('.terminal-cursor');
-      if (!el) return;
-      el.classList.add('glitch');
-      setTimeout(() => el.classList.remove('glitch'), 350);
-    }
-    setInterval(randomGlitch, Math.floor(Math.random() * (40000 - 20000)) + 20000);
-  </script>
+    </main>
 
 </body>
 </html>
