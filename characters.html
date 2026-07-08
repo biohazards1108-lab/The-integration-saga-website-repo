@@ -8,128 +8,41 @@
 
 <body class="terminal-body">
 
-<div class="crt-overlay"></div>
+<header class="header-block">
+  <h1>PROJECT EDEN TERMINAL</h1>
+  <p>Recovered Government Database</p>
+</header>
 
-<div class="boot-sequence">
-  <p>> INITIALIZING PROJECT EDEN TERMINAL...</p>
-  <p>> AUTHORIZATION: LEVEL 3 CLEARANCE</p>
-  <p>> ACCESSING SURVIVOR DATABASE...</p>
-  <p>> LINK ESTABLISHED</p>
-</div>
+<nav class="nav-grid">
+  <a href="index.html">Home</a>
+  <a href="books.html">Books</a>
+  <a href="characters.html" class="active">Survivors</a>
+  <a href="infected.html">Infected</a>
+  <a href="factions.html">Factions</a>
+  <a href="maps.html">Maps</a>
+  <a href="lore.html">Lore</a>
+  <a href="community.html">Community</a>
+  <a href="https://discord.gg/">Discord</a>
+</nav>
 
-<div class="terminal-container">
+<section class="content-block">
+  <h2>Survivor Database</h2>
+  <p>Loading personnel files...</p>
 
-  <header class="terminal-header">
-    <pre class="ascii-title">
-██████╗ ██████╗ ███████╗ ███╗   ██╗
-██╔══██╗██╔══██╗██╔════╝ ████╗  ██║
-██████╔╝██████╔╝█████╗   ██╔██╗ ██║
-██╔═══╝ ██╔══██╗██╔══╝   ██║╚██╗██║
-██║     ██║  ██║███████╗ ██║ ╚████║
-╚═╝     ╚═╝  ╚═╝╚══════╝ ╚═╝  ╚═══╝
-    </pre>
-    <p class="subtitle">Recovered Government Database // Survivor Index</p>
-    <div class="divider"></div>
-  </header>
+  <ul class="char-list">
+    <li><strong>Kevin Marsh</strong> — Independent Scout / Survivor — <a class="char-link" href="characters-info/kevin-marsh">OPEN FILE</a></li>
+    <li><strong>Lily Ross</strong> — Medic / Survivor — <a class="char-link" href="characters-info/lily-ross">OPEN FILE</a></li>
+    <li><strong>Rosa Ross</strong> — Field Medic / Survivor — <a class="char-link" href="characters-info/rosa-ross">OPEN FILE</a></li>
+    <li><strong>Darius</strong> — Warlord / Enforcer — <a class="char-link" href="characters-info/darius">OPEN FILE</a></li>
+    <li><strong>Ben</strong> — Engineer / Scavenger — <a class="char-link" href="characters-info/ben">OPEN FILE</a></li>
+    <li class="deceased"><strong>Emma Marsh</strong> — Status: Deceased — <a class="char-link" href="characters-info/emma-marsh">OPEN FILE</a></li>
+    <li><strong>Elias</strong> — Field Researcher — <a class="char-link" href="characters-info/elias">OPEN FILE</a></li>
+  </ul>
+</section>
 
-  <nav class="terminal-nav">
-    <a href="index.html">HOME</a>
-    <a href="books.html">BOOKS</a>
-    <a href="characters.html" class="active">SURVIVORS</a>
-    <a href="infected.html">INFECTED</a>
-    <a href="factions.html">FACTIONS</a>
-    <a href="maps.html">MAPS</a>
-    <a href="lore.html">LORE</a>
-    <a href="community.html">COMMUNITY</a>
-    <a href="https://discord.gg/">DISCORD</a>
-  </nav>
-
-  <section class="terminal-section">
-    <h2>> SURVIVOR DATABASE ONLINE</h2>
-    <p class="scanline-text">Displaying categorized personnel files.</p>
-
-    <!-- FIELD OPERATIVES -->
-    <div class="category-block">
-      <h3>> FIELD OPERATIVES</h3>
-      <div class="character-grid">
-
-        <div class="char-entry">
-          <span class="char-name">Kevin Marsh</span>
-          <span class="char-role">Independent Scout / Survivor</span>
-          <a href="profiles/kevin.html">OPEN FILE</a>
-        </div>
-
-        <div class="char-entry">
-          <span class="char-name">Darius</span>
-          <span class="char-role">Warlord / Enforcer</span>
-          <a href="profiles/darius.html">OPEN FILE</a>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- MEDICAL STAFF -->
-    <div class="category-block">
-      <h3>> MEDICAL STAFF</h3>
-      <div class="character-grid">
-
-        <div class="char-entry">
-          <span class="char-name">Lily Ross</span>
-          <span class="char-role">Medic / Survivor</span>
-          <a href="profiles/lily.html">OPEN FILE</a>
-        </div>
-
-        <div class="char-entry">
-          <span class="char-name">Rosa Ross</span>
-          <span class="char-role">Field Medic / Survivor</span>
-          <a href="characters-info/rosa-ross.html">OPEN FILE</a>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- TECH & RESEARCH -->
-    <div class="category-block">
-      <h3>> TECH & RESEARCH</h3>
-      <div class="character-grid">
-
-        <div class="char-entry">
-          <span class="char-name">Ben</span>
-          <span class="char-role">Engineer / Scavenger</span>
-          <a href="profiles/ben.html">OPEN FILE</a>
-        </div>
-
-        <div class="char-entry">
-          <span class="char-name">Elias</span>
-          <span class="char-role">Field Researcher</span>
-          <a href="profiles/elias.html">OPEN FILE</a>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- MEMORIAL -->
-    <div class="category-block memorial">
-      <h3>> MEMORIAL FILES</h3>
-      <div class="character-grid">
-
-        <div class="char-entry deceased">
-          <span class="char-name">Emma Marsh</span>
-          <span class="char-role">Status: Deceased</span>
-          <a href="profiles/emma.html">OPEN FILE</a>
-        </div>
-
-      </div>
-    </div>
-
-  </section>
-
-  <footer class="terminal-footer">
-    <div class="divider"></div>
-    <p>> PROJECT EDEN TERMINAL — Recovered Database</p>
-  </footer>
-
-</div>
+<footer class="footer">
+  <p>PROJECT EDEN TERMINAL — Recovered Database</p>
+</footer>
 
 </body>
 </html>
