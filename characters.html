@@ -8,11 +8,27 @@
 
 <body class="terminal-body">
 
-<div class="terminal-frame">
+<div class="crt-overlay"></div>
+
+<div class="boot-sequence">
+  <p>> INITIALIZING PROJECT EDEN TERMINAL...</p>
+  <p>> AUTHORIZATION: LEVEL 3 CLEARANCE</p>
+  <p>> ACCESSING SURVIVOR DATABASE...</p>
+  <p>> LINK ESTABLISHED</p>
+</div>
+
+<div class="terminal-container">
 
   <header class="terminal-header">
-    <h1>> PROJECT EDEN TERMINAL</h1>
-    <p>Recovered Government Database // Survivor Index</p>
+    <pre class="ascii-title">
+██████╗ ██████╗ ███████╗ ███╗   ██╗
+██╔══██╗██╔══██╗██╔════╝ ████╗  ██║
+██████╔╝██████╔╝█████╗   ██╔██╗ ██║
+██╔═══╝ ██╔══██╗██╔══╝   ██║╚██╗██║
+██║     ██║  ██║███████╗ ██║ ╚████║
+╚═╝     ╚═╝  ╚═╝╚══════╝ ╚═╝  ╚═══╝
+    </pre>
+    <p class="subtitle">Recovered Government Database // Survivor Index</p>
     <div class="divider"></div>
   </header>
 
@@ -29,54 +45,83 @@
   </nav>
 
   <section class="terminal-section">
-    <h2>> ACCESSING SURVIVOR DATABASE...</h2>
-    <p class="scanline-text">Decryption complete.</p>
+    <h2>> SURVIVOR DATABASE ONLINE</h2>
+    <p class="scanline-text">Displaying categorized personnel files.</p>
 
-    <div class="character-grid">
+    <!-- FIELD OPERATIVES -->
+    <div class="category-block">
+      <h3>> FIELD OPERATIVES</h3>
+      <div class="character-grid">
 
-      <div class="char-card">
-        <h3>Kevin Marsh</h3>
-        <p>Independent Scout / Survivor</p>
-        <a href="profiles/kevin.html">OPEN FILE</a>
+        <div class="char-entry">
+          <span class="char-name">Kevin Marsh</span>
+          <span class="char-role">Independent Scout / Survivor</span>
+          <a href="profiles/kevin.html">OPEN FILE</a>
+        </div>
+
+        <div class="char-entry">
+          <span class="char-name">Darius</span>
+          <span class="char-role">Warlord / Enforcer</span>
+          <a href="profiles/darius.html">OPEN FILE</a>
+        </div>
+
       </div>
-
-      <div class="char-card">
-        <h3>Lily Ross</h3>
-        <p>Medic / Survivor</p>
-        <a href="profiles/lily.html">OPEN FILE</a>
-      </div>
-
-      <div class="char-card">
-        <h3>Rosa Ross</h3>
-        <p>Field Medic / Survivor</p>
-        <a href="profiles/rosa.html">OPEN FILE</a>
-      </div>
-
-      <div class="char-card">
-        <h3>Darius</h3>
-        <p>Warlord / Enforcer</p>
-        <a href="profiles/darius.html">OPEN FILE</a>
-      </div>
-
-      <div class="char-card">
-        <h3>Ben</h3>
-        <p>Engineer / Scavenger</p>
-        <a href="profiles/ben.html">OPEN FILE</a>
-      </div>
-
-      <div class="char-card deceased">
-        <h3>Emma Marsh</h3>
-        <p>Status: Deceased</p>
-        <a href="profiles/emma.html">OPEN FILE</a>
-      </div>
-
-      <div class="char-card">
-        <h3>Elias</h3>
-        <p>Field Researcher</p>
-        <a href="profiles/elias.html">OPEN FILE</a>
-      </div>
-
     </div>
+
+    <!-- MEDICAL STAFF -->
+    <div class="category-block">
+      <h3>> MEDICAL STAFF</h3>
+      <div class="character-grid">
+
+        <div class="char-entry">
+          <span class="char-name">Lily Ross</span>
+          <span class="char-role">Medic / Survivor</span>
+          <a href="profiles/lily.html">OPEN FILE</a>
+        </div>
+
+        <div class="char-entry">
+          <span class="char-name">Rosa Ross</span>
+          <span class="char-role">Field Medic / Survivor</span>
+          <a href="characters-info/rosa-ross.html">OPEN FILE</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TECH & RESEARCH -->
+    <div class="category-block">
+      <h3>> TECH & RESEARCH</h3>
+      <div class="character-grid">
+
+        <div class="char-entry">
+          <span class="char-name">Ben</span>
+          <span class="char-role">Engineer / Scavenger</span>
+          <a href="profiles/ben.html">OPEN FILE</a>
+        </div>
+
+        <div class="char-entry">
+          <span class="char-name">Elias</span>
+          <span class="char-role">Field Researcher</span>
+          <a href="profiles/elias.html">OPEN FILE</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- MEMORIAL -->
+    <div class="category-block memorial">
+      <h3>> MEMORIAL FILES</h3>
+      <div class="character-grid">
+
+        <div class="char-entry deceased">
+          <span class="char-name">Emma Marsh</span>
+          <span class="char-role">Status: Deceased</span>
+          <a href="profiles/emma.html">OPEN FILE</a>
+        </div>
+
+      </div>
+    </div>
+
   </section>
 
   <footer class="terminal-footer">
