@@ -1,170 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>PROJECT EDEN TERMINAL — Survivor Database</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJECT EDEN terminal — Survivor Database</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            background-color: #000;
+            color: #00ff99;
+            font-family: "Courier New", monospace;
+            margin: 0;
+            padding-top: 70px;
+        }
 
-<style>
-    body {
-        background-color: #0d0d0d;
-        color: #00ff99;
-        font-family: "Courier New", monospace;
-        margin: 0;
-        padding: 20px;
-        text-shadow: 0 0 4px #00ff99;
-        <!-- NAV BAR -->
-<nav class="navbar">
-    <div class="nav-title">PROJECT EDEN TERMINAL</div>
-    <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="characters.html" class="active">Survivors</a></li>
-        <li><a href="books.html">Logs</a></li>
-        <li><a href="about.html">About</a></li>
-    </ul>
-</nav>
+        /* NAV BAR */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #0f0f0f;
+            border-bottom: 2px solid #00ff99;
+            padding: 10px 20px;
+            box-shadow: 0 0 10px #00ff99;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
 
-<style>
-    .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: #0f0f0f;
-        border-bottom: 2px solid #00ff99;
-        padding: 10px 20px;
-        box-shadow: 0 0 10px #00ff99;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1000;
-    }
+        .nav-title {
+            font-size: 20px;
+            letter-spacing: 1px;
+            text-shadow: 0 0 6px #00ff99;
+        }
 
-    .nav-title {
-        font-family: "Courier New", monospace;
-        color: #00ff99;
-        font-size: 20px;
-        letter-spacing: 1px;
-        text-shadow: 0 0 6px #00ff99;
-    }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+            padding: 0;
+        }
 
-    .nav-links {
-        list-style: none;
-        display: flex;
-        gap: 25px;
-        margin: 0;
-        padding: 0;
-    }
+        .nav-links a {
+            color: #00ff99;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.2s ease, background-color 0.2s ease;
+        }
 
-    .nav-links a {
-        color: #00ff99;
-        text-decoration: none;
-        font-family: "Courier New", monospace;
-        font-size: 16px;
-        transition: color 0.2s ease, text-shadow 0.2s ease;
-    }
+        .nav-links a:hover {
+            color: #0d0d0d;
+            background-color: #00ff99;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
 
-    .nav-links a:hover {
-        color: #0d0d0d;
-        background-color: #00ff99;
-        padding: 4px 8px;
-        border-radius: 4px;
-        text-shadow: none;
-    }
+        .nav-links .active {
+            border-bottom: 2px solid #00ff99;
+        }
 
-    .nav-links .active {
-        border-bottom: 2px solid #00ff99;
-    }
+        /* CHARACTER GRID */
+        .character-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 40px;
+        }
 
-    body {
-        padding-top: 70px; /* Prevent content from hiding under fixed nav */
-    }
-</style>
+        .character-card {
+            background-color: #0a0a0a;
+            border: 1px solid #00ff99;
+            box-shadow: 0 0 10px #00ff99;
+            border-radius: 8px;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
 
-    }
+        .character-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px #00ff99;
+        }
 
-    h1 {
-        text-align: center;
-        margin-bottom: 30px;
-        font-size: 32px;
-        letter-spacing: 2px;
-    }
+        .character-card img {
+            width: 100%;
+            border-radius: 6px;
+            border: 1px solid #00ff99;
+        }
 
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-        gap: 25px;
-        padding: 10px;
-    }
+        .character-card h2 {
+            margin-top: 10px;
+            font-size: 18px;
+        }
 
-    .card {
-        background-color: #0f0f0f;
-        border: 2px solid #00ff99;
-        padding: 15px;
-        border-radius: 8px;
-        text-align: center;
-        box-shadow: 0 0 10px #00ff99;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
+        .character-card p {
+            font-size: 14px;
+            color: #00ff99;
+        }
 
-    .card:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 18px #00ff99;
-    }
+        .view-profile {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 6px 12px;
+            border: 1px solid #00ff99;
+            color: #00ff99;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
 
-    .thumb-frame {
-        width: 150px;
-        height: 150px;
-        margin: 0 auto 15px auto;
-        border: 2px solid #00ff99;
-        border-radius: 6px;
-        overflow: hidden;
-        background-color: #001a12;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .thumb-frame img {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
-
-    .name {
-        font-size: 20px;
-        margin-bottom: 5px;
-    }
-
-    .age {
-        font-size: 14px;
-        opacity: 0.8;
-        margin-bottom: 15px;
-    }
-
-    .btn {
-        display: inline-block;
-        padding: 8px 12px;
-        border: 2px solid #00ff99;
-        color: #00ff99;
-        text-decoration: none;
-        border-radius: 5px;
-        transition: background-color 0.2s ease;
-    }
-
-    .btn:hover {
-        background-color: #00ff99;
-        color: #0d0d0d;
-    }
-</style>
+        .view-profile:hover {
+            background-color: #00ff99;
+            color: #000;
+        }
+    </style>
 </head>
-
 <body>
+    <!-- NAV BAR -->
+    <nav class="navbar">
+        <div class="nav-title">PROJECT EDEN TERMINAL</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="characters.html" class="active">Survivors</a></li>
+            <li><a href="books.html">Logs</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
 
-<h1>PROJECT EDEN — SURVIVOR DATABASE</h1>
-
-<div class="grid">
-
-    <!-- Lily Ross -->
+    <h1 style="text-align:center; text-shadow:0 0 10px #00ff99;">Survivor Database</h1>
+<!-- Lily Ross -->
     <div class="card">
         <div class="thumb-frame">
             <img src="assets/characters/lily_ross_nfe_portrait.png" alt="Lily Ross">
@@ -202,38 +169,3 @@
         
         <a class="btn" href="characters-info/kevin-marsh.html">View Profile</a>
     </div>
-
-    <!-- Darius -->
-    <div class="card">
-        <div class="thumb-frame">
-            <img src="assets/characters/darius.png" alt="Darius">
-        </div>
-        <div class="name">Darius</div>
- 
-        <a class="btn" href="characters-info/darius.html">View Profile</a>
-    </div>
-
-    <!-- Ben -->
-    <div class="card">
-        <div class="thumb-frame">
-            <img src="assets/characters/ben.png" alt="Ben">
-        </div>
-        <div class="name">Ben</div>
-      
-        <a class="btn" href="characters-info/ben.html">View Profile</a>
-    </div>
-
-    <!-- Elias -->
-    <div class="card">
-        <div class="thumb-frame">
-            <img src="assets/characters/elias.png" alt="Elias">
-        </div>
-        <div class="name">Elias</div>
-       
-        <a class="btn" href="characters-info/elias.html">View Profile</a>
-    </div>
-
-</div>
-
-</body>
-</html>
