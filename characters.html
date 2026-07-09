@@ -12,6 +12,74 @@
         margin: 0;
         padding: 20px;
         text-shadow: 0 0 4px #00ff99;
+        <!-- NAV BAR -->
+<nav class="navbar">
+    <div class="nav-title">PROJECT EDEN TERMINAL</div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="characters.html" class="active">Survivors</a></li>
+        <li><a href="books.html">Logs</a></li>
+        <li><a href="about.html">About</a></li>
+    </ul>
+</nav>
+
+<style>
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #0f0f0f;
+        border-bottom: 2px solid #00ff99;
+        padding: 10px 20px;
+        box-shadow: 0 0 10px #00ff99;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    .nav-title {
+        font-family: "Courier New", monospace;
+        color: #00ff99;
+        font-size: 20px;
+        letter-spacing: 1px;
+        text-shadow: 0 0 6px #00ff99;
+    }
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 25px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-links a {
+        color: #00ff99;
+        text-decoration: none;
+        font-family: "Courier New", monospace;
+        font-size: 16px;
+        transition: color 0.2s ease, text-shadow 0.2s ease;
+    }
+
+    .nav-links a:hover {
+        color: #0d0d0d;
+        background-color: #00ff99;
+        padding: 4px 8px;
+        border-radius: 4px;
+        text-shadow: none;
+    }
+
+    .nav-links .active {
+        border-bottom: 2px solid #00ff99;
+    }
+
+    body {
+        padding-top: 70px; /* Prevent content from hiding under fixed nav */
+    }
+</style>
+
     }
 
     h1 {
