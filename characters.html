@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PROJECT EDEN terminal — Survivor Database</title>
+    <title>PROJECT EDEN TERMINAL — Survivor Index</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
         body {
@@ -11,7 +11,7 @@
             color: #00ff99;
             font-family: "Courier New", monospace;
             margin: 0;
-            padding-top: 70px;
+            padding-top: 70px; /* space for fixed nav */
         }
 
         /* NAV BAR */
@@ -47,12 +47,12 @@
         .nav-links a {
             color: #00ff99;
             text-decoration: none;
-            font-size: 16px;
+            font-size: 15px;
             transition: color 0.2s ease, background-color 0.2s ease;
         }
 
         .nav-links a:hover {
-            color: #0d0d0d;
+            color: #000;
             background-color: #00ff99;
             padding: 4px 8px;
             border-radius: 4px;
@@ -60,6 +60,13 @@
 
         .nav-links .active {
             border-bottom: 2px solid #00ff99;
+        }
+
+        /* PAGE TITLE */
+        h1 {
+            text-align: center;
+            text-shadow: 0 0 10px #00ff99;
+            margin-top: 20px;
         }
 
         /* CHARACTER GRID */
@@ -98,7 +105,6 @@
 
         .character-card p {
             font-size: 14px;
-            color: #00ff99;
         }
 
         .view-profile {
@@ -123,49 +129,38 @@
     <nav class="navbar">
         <div class="nav-title">PROJECT EDEN TERMINAL</div>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="characters.html" class="active">Survivors</a></li>
-            <li><a href="books.html">Logs</a></li>
-            <li><a href="about.html">About</a></li>
+            <li><a href="discord.html">Discord</a></li>
+            <li><a href="atlas.html">Atlas</a></li>
+            <li><a href="infected-info/index.html">Infected</a></li>
+            <li><a href="characters.html" class="active">Survivor Index</a></li>
+            <li><a href="factions.html">Factions</a></li>
+            <li><a href="community.html">Community Hub</a></li>
         </ul>
     </nav>
 
-    <h1 style="text-align:center; text-shadow:0 0 10px #00ff99;">Survivor Database</h1>
-<!-- Lily Ross -->
-    <div class="card">
-        <div class="thumb-frame">
-            <img src="assets/characters/lily_ross_nfe_portrait.png" alt="Lily Ross">
-        </div>
-        <div class="name">Lily Ross</div>
-      
-        <a class="btn" href="characters-info/lily-ross.html">View Profile</a>
-    </div>
+    <h1>Survivor Index</h1>
 
-    <!-- Rosa Ross -->
-    <div class="card">
-        <div class="thumb-frame">
-            <img src="assets/characters/rosa_ross_nfe_portrait.png" alt="Rosa Ross">
+    <div class="character-grid">
+        <div class="character-card">
+            <img src="assets/characters/darius.png" alt="Darius">
+            <h2>Darius</h2>
+            <p>Age: 45</p>
+            <a href="characters-info/darius.html" class="view-profile">View Profile</a>
         </div>
-        <div class="name">Rosa Ross</div>
-    <a class="btn" href="characters-info/rosa-ross.html">View Profile</a>
-    </div>
 
-    <!-- Emma Marsh -->
-    <div class="card">
-        <div class="thumb-frame">
-            <img src="assets/characters/emma-marsh.png" alt="Emma Marsh">
+        <div class="character-card">
+            <img src="assets/characters/ben.png" alt="Ben">
+            <h2>Ben</h2>
+            <p>Age: 35</p>
+            <a href="characters-info/ben.html" class="view-profile">View Profile</a>
         </div>
-        <div class="name">Emma Marsh</div>
-       
-        <a class="btn" href="characters-info/emma-marsh.html">View Profile</a>
-    </div>
 
-    <!-- Kevin Marsh -->
-    <div class="card">
-        <div class="thumb-frame">
-            <img src="assets/characters/kevin_marsh_nfe_portrait.png" alt="Kevin Marsh">
+        <div class="character-card">
+            <img src="assets/characters/elias.png" alt="Elias">
+            <h2>Elias</h2>
+            <p>Age: 40</p>
+            <a href="characters-info/elias.html" class="view-profile">View Profile</a>
         </div>
-        <div class="name">Kevin Marsh</div>
-        
-        <a class="btn" href="characters-info/kevin-marsh.html">View Profile</a>
     </div>
+</body>
+</html>
